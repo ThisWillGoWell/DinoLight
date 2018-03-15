@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="dinolight.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="dinolight.bgn" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="dinolight.bit" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="dinolight.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="dinolight.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="dinolight.drc" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="dinolight.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="dinolight.ncd" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="dinolight.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="dinolight.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="dinolight.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="dinolight.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="dinolight.par" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="dinolight.pcf" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="dinolight.prj"/>
+    <file xil_pn:fileType="FILE_TRCE_MISC" xil_pn:name="dinolight.ptwx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="dinolight.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="dinolight.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="dinolight.twr" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="dinolight.twx" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="dinolight.unroutes" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="dinolight.ut" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:fileType="FILE_XPI" xil_pn:name="dinolight.xpi"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="dinolight.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="dinolight_envsettings.html"/>
+    <file xil_pn:fileType="FILE_NCD" xil_pn:name="dinolight_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="dinolight_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="dinolight_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="dinolight_map.ncd" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="dinolight_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="dinolight_map.xrpt"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="dinolight_ngdbuild.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="dinolight_pad.csv" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="dinolight_pad.txt" xil_pn:subbranch="Par"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="dinolight_par.xrpt"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="dinolight_summary.html"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="dinolight_summary.xml"/>
+    <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="dinolight_usage.xml"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="dinolight_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1493749805" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1493749805">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1493685873" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-7616145717987409917" xil_pn:start_ts="1493685873">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1493749805" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-852757428946143782" xil_pn:start_ts="1493749805">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1493685873" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1493685873">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1493685873" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-3363076369624699451" xil_pn:start_ts="1493685873">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1493749805" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="-1970394750299821092" xil_pn:start_ts="1493749805">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1493749805" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="2834979887460576676" xil_pn:start_ts="1493749805">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1521095284" xil_pn:in_ck="-8514732990124072163" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-6496797312303679373" xil_pn:start_ts="1521095264">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="dinolight.lso"/>
+      <outfile xil_pn:name="dinolight.ngc"/>
+      <outfile xil_pn:name="dinolight.ngr"/>
+      <outfile xil_pn:name="dinolight.prj"/>
+      <outfile xil_pn:name="dinolight.stx"/>
+      <outfile xil_pn:name="dinolight.syr"/>
+      <outfile xil_pn:name="dinolight.xst"/>
+      <outfile xil_pn:name="dinolight_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1493685931" xil_pn:in_ck="-7536674172325132088" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-7441045848185865638" xil_pn:start_ts="1493685931">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1493749607" xil_pn:in_ck="-1743127743878527632" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="5502774300859943685" xil_pn:start_ts="1493749596">
+      <status xil_pn:value="AbortedRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <outfile xil_pn:name="dinolight.bld"/>
+      <outfile xil_pn:name="dinolight.ngd"/>
+      <outfile xil_pn:name="dinolight_ngdbuild.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1493749927" xil_pn:in_ck="-1743127743878527631" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-2458208932667922180" xil_pn:start_ts="1493749805">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+      <outfile xil_pn:name="dinolight.pcf"/>
+      <outfile xil_pn:name="dinolight_map.map"/>
+      <outfile xil_pn:name="dinolight_map.mrp"/>
+      <outfile xil_pn:name="dinolight_map.ncd"/>
+      <outfile xil_pn:name="dinolight_map.ngm"/>
+      <outfile xil_pn:name="dinolight_map.xrpt"/>
+      <outfile xil_pn:name="dinolight_summary.xml"/>
+      <outfile xil_pn:name="dinolight_usage.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1493750005" xil_pn:in_ck="4130730106619045130" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-6937897011652631087" xil_pn:start_ts="1493749927">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
+      <outfile xil_pn:name="dinolight.ncd"/>
+      <outfile xil_pn:name="dinolight.pad"/>
+      <outfile xil_pn:name="dinolight.par"/>
+      <outfile xil_pn:name="dinolight.ptwx"/>
+      <outfile xil_pn:name="dinolight.unroutes"/>
+      <outfile xil_pn:name="dinolight.xpi"/>
+      <outfile xil_pn:name="dinolight_pad.csv"/>
+      <outfile xil_pn:name="dinolight_pad.txt"/>
+      <outfile xil_pn:name="dinolight_par.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1493750031" xil_pn:in_ck="6248957883299460901" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1493750005">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+      <outfile xil_pn:name="dinolight.bgn"/>
+      <outfile xil_pn:name="dinolight.bit"/>
+      <outfile xil_pn:name="dinolight.drc"/>
+      <outfile xil_pn:name="dinolight.ut"/>
+      <outfile xil_pn:name="usage_statistics_webtalk.html"/>
+      <outfile xil_pn:name="webtalk.log"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1493750005" xil_pn:in_ck="-1743127743878527763" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1493749992">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
+      <outfile xil_pn:name="dinolight.twr"/>
+      <outfile xil_pn:name="dinolight.twx"/>
+    </transform>
+  </transforms>
+
+</generated_project>

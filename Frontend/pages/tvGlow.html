@@ -1,0 +1,35 @@
+<div id="tv-glow-container" ng-controller="tvGlowController">
+   
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="hotspots"  viewBox="0 20 291 250" xml:space="preserve">
+          <style>
+            .glow path {
+                fill: rgba(0, 0, 0, 255);
+                stroke: #fff;
+                filter:url(#glow-filter);
+                cursor:pointer;
+            }                  
+        /* ]]> */
+        </style>
+        <defs>
+          <filter id="glow-filter" x="-40%" y="-40%" width="180%" height="180%">
+            <feFlood flood-color="{{ tvGlowColor1 }}" result="flood1" />
+            <feComposite in="flood1" in2="SourceGraphic" operator="in" result="floodShape" />
+            <feGaussianBlur in="floodShape" stdDeviation="3" result="blur" />
+            <feFlood flood-color="{{ tvGlowColor2 }}" result="flood2" />
+            <feComposite in="flooder2" in2="SourceGraphic" operator="in" result="floodShape2" />
+            <feGaussianBlur in="floodShape2" stdDeviation="17" result="blur2" />
+            <feMerge result="blurs">
+              <feMergeNode in="blur2"/>
+              <feMergeNode in="blur2"/>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="blur"/>
+            </feMerge>
+            <feComposite in="blurs" in2="SourceGraphic" operator="out" />
+          </filter>
+        </defs>
+        <g ng-class="powerVal ? 'glow': ''"   transform="matrix(0.7561005,0,0,0.72109446,37.196105,39.43481)">
+            <path d="M22 22l247 0c6,0 12,2 16,7 4,4 6,9 6,15l0 154c0,6 -2,12 -6,16l0 0c-4,4 -10,6 -16,6l-247 0c-6,0 -11,-2 -15,-6 -5,-4 -7,-10 -7,-16l0 -154c0,-6 2,-11 7,-15l0 0c4,-5 9,-7 15,-7zm79 230c-5,0 -9,-4 -9,-9 0,-5 4,-9 9,-9l89 0c5,0 9,4 9,9 0,5 -4,9 -9,9l-89 0zm168 -212l-247 0c-1,0 -2,1 -3,1l0 0c0,1 -1,2 -1,3l0 154c0,1 1,2 1,3 1,1 2,1 3,1l247 0c1,0 2,0 3,-1l0 0c0,-1 1,-2 1,-3l0 -154c0,-1 -1,-2 -1,-3 -1,0 -2,-1 -3,-1z"/>
+        </g>
+    </svg>
+
+</div>

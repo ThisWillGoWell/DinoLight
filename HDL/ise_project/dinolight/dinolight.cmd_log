@@ -1,0 +1,28 @@
+xst -intstyle ise -ifn "C:/Users/Willi/OneDrive/DinoLight/HDL/ise_project/dinolight/dinolight.xst" -ofn "C:/Users/Willi/OneDrive/DinoLight/HDL/ise_project/dinolight/dinolight.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Users/Willi/OneDrive/DinoLight/HDL/constraints/pinout.ucf -p xc6slx25-ftg256-3 dinolight.ngc dinolight.ngd  
+map -intstyle ise -p xc6slx25-ftg256-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -detail -ir off -pr off -lc off -power off -o dinolight_map.ncd dinolight.ngd dinolight.pcf 
+par -w -intstyle ise -ol high -mt off dinolight_map.ncd dinolight.ncd dinolight.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml dinolight.twx dinolight.ncd -o dinolight.twr dinolight.pcf 
+bitgen -intstyle ise -f dinolight.ut dinolight.ncd 
+xst -intstyle ise -ifn "C:/Users/Willi/OneDrive/DinoLight/HDL/ise_project/dinolight/dinolight.xst" -ofn "C:/Users/Willi/OneDrive/DinoLight/HDL/ise_project/dinolight/dinolight.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Users/Willi/OneDrive/DinoLight/HDL/constraints/pinout.ucf -p xc6slx25-ftg256-3 dinolight.ngc dinolight.ngd  
+map -intstyle ise -p xc6slx25-ftg256-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -detail -ir off -pr off -lc off -power off -o dinolight_map.ncd dinolight.ngd dinolight.pcf 
+par -w -intstyle ise -ol high -mt off dinolight_map.ncd dinolight.ncd dinolight.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml dinolight.twx dinolight.ncd -o dinolight.twr dinolight.pcf 
+bitgen -intstyle ise -f dinolight.ut dinolight.ncd 
+xst -intstyle ise -ifn "C:/Users/Willi/OneDrive/DinoLight/HDL/ise_project/dinolight/dinolight.xst" -ofn "C:/Users/Willi/OneDrive/DinoLight/HDL/ise_project/dinolight/dinolight.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Users/Willi/OneDrive/DinoLight/HDL/constraints/pinout.ucf -p xc6slx25-ftg256-3 dinolight.ngc dinolight.ngd  
+map -intstyle ise -p xc6slx25-ftg256-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -detail -ir off -pr off -lc off -power off -o dinolight_map.ncd dinolight.ngd dinolight.pcf 
+map -intstyle ise -p xc6slx25-ftg256-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -detail -ir off -pr off -lc off -power off -o dinolight_map.ncd dinolight.ngd dinolight.pcf 
+par -w -intstyle ise -ol high -mt off dinolight_map.ncd dinolight.ncd dinolight.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml dinolight.twx dinolight.ncd -o dinolight.twr dinolight.pcf 
+bitgen -intstyle ise -f dinolight.ut dinolight.ncd 
+xst -intstyle ise -ifn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.xst" -ofn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.syr" 
+xst -intstyle ise -ifn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.xst" -ofn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.syr" 
+xst -intstyle ise -ifn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.xst" -ofn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.syr" 
+xst -intstyle ise -ifn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.xst" -ofn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.syr" 
+xst -intstyle ise -ifn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.xst" -ofn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.syr" 
+xst -intstyle ise -ifn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.xst" -ofn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.syr" 
+xst -intstyle ise -ifn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.xst" -ofn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.syr" 
+xst -intstyle ise -ifn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.xst" -ofn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.syr" 
+xst -intstyle ise -ifn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.xst" -ofn "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_project/dinolight/dinolight.syr" 

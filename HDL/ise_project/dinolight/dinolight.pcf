@@ -1,0 +1,30 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Tue May 02 14:32:02 2017
+//! **************************************************************************
+
+SCHEMATIC START;
+CONFIG VCCAUX = "3.3";
+COMP "hdmi_in_n<0>" LOCATE = SITE "A7" LEVEL 1;
+COMP "hdmi_in_n<1>" LOCATE = SITE "A6" LEVEL 1;
+COMP "hdmi_in_n<2>" LOCATE = SITE "A5" LEVEL 1;
+COMP "hdmi_in_n<3>" LOCATE = SITE "A9" LEVEL 1;
+COMP "hdmi_in_p<0>" LOCATE = SITE "C7" LEVEL 1;
+COMP "hdmi_in_p<1>" LOCATE = SITE "B6" LEVEL 1;
+COMP "hdmi_in_p<2>" LOCATE = SITE "B5" LEVEL 1;
+COMP "hdmi_in_p<3>" LOCATE = SITE "C9" LEVEL 1;
+COMP "leds<0>" LOCATE = SITE "P11" LEVEL 1;
+COMP "leds<1>" LOCATE = SITE "N9" LEVEL 1;
+COMP "leds<2>" LOCATE = SITE "M9" LEVEL 1;
+COMP "leds<3>" LOCATE = SITE "P9" LEVEL 1;
+COMP "leds<4>" LOCATE = SITE "T8" LEVEL 1;
+COMP "leds<5>" LOCATE = SITE "N8" LEVEL 1;
+COMP "leds<6>" LOCATE = SITE "P8" LEVEL 1;
+COMP "leds<7>" LOCATE = SITE "P7" LEVEL 1;
+COMP "portC10" LOCATE = SITE "P12" LEVEL 1;
+COMP "clk_50" LOCATE = SITE "K3" LEVEL 1;
+COMP "portC6" LOCATE = SITE "M13" LEVEL 1;
+COMP "portC8" LOCATE = SITE "M12" LEVEL 1;
+NET "hdmi_averager/Inst_dvid_in/dvid_clk" PERIOD = 12 ns HIGH 50%;
+NET "clk_50_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+SCHEMATIC END;
+

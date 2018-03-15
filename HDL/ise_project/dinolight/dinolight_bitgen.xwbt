@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Willi\OneDrive\DinoLight\HDL\ise_project\dinolight\dinolight.ncd
+OUTFILE=C:\Users\Willi\OneDrive\DinoLight\HDL\ise_project\dinolight\dinolight.bit
+FAMILY=Spartan6
+PART=xc6slx25-3ftg256
+WORKINGDIR=C:\Users\Willi\OneDrive\DinoLight\HDL\ise_project\dinolight
+LICENSE=WebPack
+USER_INFO=211341362_0_0_377
