@@ -84,7 +84,6 @@ process(clk_pixel)
          a_green   <= i_green;
          a_blue    <= i_blue;
          a_blank   <= i_blank;
-         a_hsync   <= i_hsync;
          a_vsync   <= i_vsync;
 				
          -- Working out where we are in the screen..

@@ -36,7 +36,6 @@ entity dinolight is
 			  portC6			: 	out std_logic;
 			  portC8			:	out std_logic
 			  
-
 			 );
 			 
 end dinolight;
@@ -52,9 +51,7 @@ architecture Behavioral of dinolight is
 			hdmi_in_sdat  : inout  STD_LOGIC;                    
 			vsync 			: out std_logic;
 			framebuffer		: out std_logic_vector(0 to num_blocks * 24 - 1);
-			clk_pixel		: out std_logic;
-			leftAverage 	: out std_logic_vector(0 to 23);
-			rightAverage 	: out std_logic_vector(0 to 23)
+			clk_pixel		: out std_logic
 		);
 	end component;
 
@@ -165,9 +162,7 @@ hdmi_averager: video_averager
            hdmi_in_sdat  => hdmi_in_sdat,                   
 			  vsync 			 => vsync_pixel,
 			  framebuffer	 => framebuffer_pixel,
-			  clk_pixel	 	 => clk_pixel,
-			  leftAverage  => periodic_send_data_pixel(47 downto 24),
-				rightAverage => periodic_send_data_pixel(23 downto 0)
+			  clk_pixel	 	 => clk_pixel
 			 );
 
 uart: uart_top 
@@ -179,7 +174,7 @@ uart: uart_top
 		usb_rs232_txd => portC8,
 		
 		-- data in
-		periodic_send_data	=> periodic_send_data_50,
+		periodic_send_data	=> (others => '0'),
 		-- data out registers
 		mode => mode,
 		

@@ -1,9 +1,9 @@
 --------------------------------------------------------------------------------
-Release 14.7 Trace  (nt64)
+Release 14.7 Trace  (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
--n 3 -fastpaths -xml dinolight.twx dinolight.ncd -o dinolight.twr dinolight.pcf
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml dinolight.twx dinolight.ncd -o dinolight.twr dinolight.pcf
 
 Design file:              dinolight.ncd
 Physical constraint file: dinolight.pcf
@@ -126,17 +126,17 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
 
  1065 paths analyzed, 255 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   4.582ns.
+ Minimum period is   4.541ns.
 --------------------------------------------------------------------------------
 
-Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7 (SLICE_X6Y75.C3), 18 paths
+Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_2 (SLICE_X7Y66.A5), 18 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     1.418ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               hdmi_averager/Inst_dvid_in/framing_3 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7 (FF)
+Slack (setup path):     1.459ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               hdmi_averager/Inst_dvid_in/framing_1 (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_2 (FF)
   Requirement:          6.000ns
-  Data Path Delay:      4.035ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.332ns (1.520 - 1.852)
+  Data Path Delay:      3.976ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.350ns (1.523 - 1.873)
   Source Clock:         clk_pixel rising at 0.666ns
   Destination Clock:    hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
   Clock Uncertainty:    0.215ns
@@ -146,33 +146,33 @@ Slack (setup path):     1.418ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.177ns
     Phase Error (PE):           0.120ns
 
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/framing_3 to hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7
+  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/framing_1 to hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y73.CMUX     Tshcko                0.488   hdmi_averager/Inst_dvid_in/framing<2>
-                                                       hdmi_averager/Inst_dvid_in/framing_3
-    SLICE_X2Y73.A1       net (fanout=11)       1.122   hdmi_averager/Inst_dvid_in/framing<3>
-    SLICE_X2Y73.A        Tilo                  0.203   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed<7>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT1021
-    SLICE_X6Y75.D3       net (fanout=10)       1.108   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT102
-    SLICE_X6Y75.D        Tilo                  0.203   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<7>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT92
-    SLICE_X6Y75.C3       net (fanout=1)        0.622   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT91
-    SLICE_X6Y75.CLK      Tas                   0.289   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<7>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT93
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7
+    SLICE_X3Y72.BMUX     Tshcko                0.461   hdmi_averager/Inst_dvid_in/framing<2>
+                                                       hdmi_averager/Inst_dvid_in/framing_1
+    SLICE_X7Y65.B5       net (fanout=54)       1.836   hdmi_averager/Inst_dvid_in/framing<1>
+    SLICE_X7Y65.BMUX     Tilo                  0.313   hdmi_averager/clean_green/cleanSignal_generate[5].cleanSignal/removeBuffer<3>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT41
+    SLICE_X7Y66.B2       net (fanout=1)        0.598   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT4
+    SLICE_X7Y66.B        Tilo                  0.259   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<3>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT42
+    SLICE_X7Y66.A5       net (fanout=1)        0.187   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT41
+    SLICE_X7Y66.CLK      Tas                   0.322   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<3>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT43
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_2
     -------------------------------------------------  ---------------------------
-    Total                                      4.035ns (1.183ns logic, 2.852ns route)
-                                                       (29.3% logic, 70.7% route)
+    Total                                      3.976ns (1.355ns logic, 2.621ns route)
+                                                       (34.1% logic, 65.9% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     1.532ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               hdmi_averager/Inst_dvid_in/framing_0 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7 (FF)
+Slack (setup path):     1.493ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               hdmi_averager/Inst_dvid_in/framing_1 (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_2 (FF)
   Requirement:          6.000ns
-  Data Path Delay:      3.921ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.332ns (1.520 - 1.852)
+  Data Path Delay:      3.942ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.350ns (1.523 - 1.873)
   Source Clock:         clk_pixel rising at 0.666ns
   Destination Clock:    hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
   Clock Uncertainty:    0.215ns
@@ -182,33 +182,33 @@ Slack (setup path):     1.532ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.177ns
     Phase Error (PE):           0.120ns
 
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/framing_0 to hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7
+  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/framing_1 to hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y73.BQ       Tcko                  0.447   hdmi_averager/Inst_dvid_in/framing<2>
-                                                       hdmi_averager/Inst_dvid_in/framing_0
-    SLICE_X2Y73.A2       net (fanout=12)       1.049   hdmi_averager/Inst_dvid_in/framing<0>
-    SLICE_X2Y73.A        Tilo                  0.203   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed<7>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT1021
-    SLICE_X6Y75.D3       net (fanout=10)       1.108   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT102
-    SLICE_X6Y75.D        Tilo                  0.203   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<7>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT92
-    SLICE_X6Y75.C3       net (fanout=1)        0.622   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT91
-    SLICE_X6Y75.CLK      Tas                   0.289   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<7>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT93
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7
+    SLICE_X3Y72.BMUX     Tshcko                0.461   hdmi_averager/Inst_dvid_in/framing<2>
+                                                       hdmi_averager/Inst_dvid_in/framing_1
+    SLICE_X5Y69.B4       net (fanout=54)       1.329   hdmi_averager/Inst_dvid_in/framing<1>
+    SLICE_X5Y69.BMUX     Tilo                  0.313   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT103
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT1011
+    SLICE_X7Y66.B1       net (fanout=10)       1.071   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT101
+    SLICE_X7Y66.B        Tilo                  0.259   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<3>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT42
+    SLICE_X7Y66.A5       net (fanout=1)        0.187   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT41
+    SLICE_X7Y66.CLK      Tas                   0.322   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<3>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT43
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_2
     -------------------------------------------------  ---------------------------
-    Total                                      3.921ns (1.142ns logic, 2.779ns route)
-                                                       (29.1% logic, 70.9% route)
+    Total                                      3.942ns (1.355ns logic, 2.587ns route)
+                                                       (34.4% logic, 65.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     1.728ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     1.743ns (requirement - (data path - clock path skew + uncertainty))
   Source:               hdmi_averager/Inst_dvid_in/framing_2 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7 (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_2 (FF)
   Requirement:          6.000ns
-  Data Path Delay:      3.725ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.332ns (1.520 - 1.852)
+  Data Path Delay:      3.692ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.350ns (1.523 - 1.873)
   Source Clock:         clk_pixel rising at 0.666ns
   Destination Clock:    hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
   Clock Uncertainty:    0.215ns
@@ -218,36 +218,36 @@ Slack (setup path):     1.728ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.177ns
     Phase Error (PE):           0.120ns
 
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/framing_2 to hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7
+  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/framing_2 to hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y73.CQ       Tcko                  0.447   hdmi_averager/Inst_dvid_in/framing<2>
+    SLICE_X3Y72.CQ       Tcko                  0.391   hdmi_averager/Inst_dvid_in/framing<2>
                                                        hdmi_averager/Inst_dvid_in/framing_2
-    SLICE_X2Y73.A5       net (fanout=11)       0.853   hdmi_averager/Inst_dvid_in/framing<2>
-    SLICE_X2Y73.A        Tilo                  0.203   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed<7>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT1021
-    SLICE_X6Y75.D3       net (fanout=10)       1.108   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT102
-    SLICE_X6Y75.D        Tilo                  0.203   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<7>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT92
-    SLICE_X6Y75.C3       net (fanout=1)        0.622   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT91
-    SLICE_X6Y75.CLK      Tas                   0.289   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<7>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT93
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7
+    SLICE_X5Y69.B3       net (fanout=11)       1.149   hdmi_averager/Inst_dvid_in/framing<2>
+    SLICE_X5Y69.BMUX     Tilo                  0.313   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT103
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT1011
+    SLICE_X7Y66.B1       net (fanout=10)       1.071   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT101
+    SLICE_X7Y66.B        Tilo                  0.259   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<3>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT42
+    SLICE_X7Y66.A5       net (fanout=1)        0.187   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT41
+    SLICE_X7Y66.CLK      Tas                   0.322   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<3>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT43
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_2
     -------------------------------------------------  ---------------------------
-    Total                                      3.725ns (1.142ns logic, 2.583ns route)
-                                                       (30.7% logic, 69.3% route)
+    Total                                      3.692ns (1.285ns logic, 2.407ns route)
+                                                       (34.8% logic, 65.2% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_3 (SLICE_X6Y70.C1), 4 paths
+Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_4 (SLICE_X7Y68.A5), 18 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     1.453ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               hdmi_averager/Inst_dvid_in/framing_2 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_3 (FF)
+Slack (setup path):     1.504ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               hdmi_averager/Inst_dvid_in/framing_1 (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_4 (FF)
   Requirement:          6.000ns
-  Data Path Delay:      3.994ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.338ns (1.514 - 1.852)
+  Data Path Delay:      3.927ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.354ns (1.519 - 1.873)
   Source Clock:         clk_pixel rising at 0.666ns
   Destination Clock:    hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
   Clock Uncertainty:    0.215ns
@@ -257,30 +257,33 @@ Slack (setup path):     1.453ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.177ns
     Phase Error (PE):           0.120ns
 
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/framing_2 to hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_3
+  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/framing_1 to hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_4
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y73.CQ       Tcko                  0.447   hdmi_averager/Inst_dvid_in/framing<2>
-                                                       hdmi_averager/Inst_dvid_in/framing_2
-    SLICE_X7Y74.B2       net (fanout=11)       1.553   hdmi_averager/Inst_dvid_in/framing<2>
-    SLICE_X7Y74.BMUX     Tilo                  0.313   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/joined<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT1051
-    SLICE_X6Y70.C1       net (fanout=10)       1.392   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT105
-    SLICE_X6Y70.CLK      Tas                   0.289   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT53
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_3
+    SLICE_X3Y72.BMUX     Tshcko                0.461   hdmi_averager/Inst_dvid_in/framing<2>
+                                                       hdmi_averager/Inst_dvid_in/framing_1
+    SLICE_X7Y67.A2       net (fanout=54)       1.898   hdmi_averager/Inst_dvid_in/framing<1>
+    SLICE_X7Y67.AMUX     Tilo                  0.313   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT7
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT61
+    SLICE_X7Y68.B4       net (fanout=1)        0.487   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT6
+    SLICE_X7Y68.B        Tilo                  0.259   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<5>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT62
+    SLICE_X7Y68.A5       net (fanout=1)        0.187   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT61
+    SLICE_X7Y68.CLK      Tas                   0.322   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<5>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT63
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_4
     -------------------------------------------------  ---------------------------
-    Total                                      3.994ns (1.049ns logic, 2.945ns route)
-                                                       (26.3% logic, 73.7% route)
+    Total                                      3.927ns (1.355ns logic, 2.572ns route)
+                                                       (34.5% logic, 65.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     2.410ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     1.857ns (requirement - (data path - clock path skew + uncertainty))
   Source:               hdmi_averager/Inst_dvid_in/framing_3 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_3 (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_4 (FF)
   Requirement:          6.000ns
-  Data Path Delay:      3.037ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.338ns (1.514 - 1.852)
+  Data Path Delay:      3.574ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.354ns (1.519 - 1.873)
   Source Clock:         clk_pixel rising at 0.666ns
   Destination Clock:    hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
   Clock Uncertainty:    0.215ns
@@ -290,66 +293,144 @@ Slack (setup path):     2.410ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.177ns
     Phase Error (PE):           0.120ns
 
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/framing_3 to hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_3
+  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/framing_3 to hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_4
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y73.CMUX     Tshcko                0.488   hdmi_averager/Inst_dvid_in/framing<2>
+    SLICE_X3Y72.CMUX     Tshcko                0.461   hdmi_averager/Inst_dvid_in/framing<2>
                                                        hdmi_averager/Inst_dvid_in/framing_3
-    SLICE_X7Y74.B4       net (fanout=11)       0.555   hdmi_averager/Inst_dvid_in/framing<3>
-    SLICE_X7Y74.BMUX     Tilo                  0.313   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/joined<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT1051
-    SLICE_X6Y70.C1       net (fanout=10)       1.392   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT105
-    SLICE_X6Y70.CLK      Tas                   0.289   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT53
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_3
+    SLICE_X5Y69.A1       net (fanout=11)       1.256   hdmi_averager/Inst_dvid_in/framing<3>
+    SLICE_X5Y69.A        Tilo                  0.259   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT103
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT1021
+    SLICE_X7Y68.B2       net (fanout=10)       0.830   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT102
+    SLICE_X7Y68.B        Tilo                  0.259   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<5>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT62
+    SLICE_X7Y68.A5       net (fanout=1)        0.187   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT61
+    SLICE_X7Y68.CLK      Tas                   0.322   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<5>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT63
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_4
     -------------------------------------------------  ---------------------------
-    Total                                      3.037ns (1.090ns logic, 1.947ns route)
-                                                       (35.9% logic, 64.1% route)
+    Total                                      3.574ns (1.301ns logic, 2.273ns route)
+                                                       (36.4% logic, 63.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     2.474ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_3 (FF)
+Slack (setup path):     2.004ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               hdmi_averager/Inst_dvid_in/framing_1 (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_4 (FF)
   Requirement:          6.000ns
-  Data Path Delay:      3.429ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.012ns (0.144 - 0.156)
-  Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 0.666ns
+  Data Path Delay:      3.427ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.354ns (1.519 - 1.873)
+  Source Clock:         clk_pixel rising at 0.666ns
   Destination Clock:    hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
-  Clock Uncertainty:    0.085ns
+  Clock Uncertainty:    0.215ns
 
-  Clock Uncertainty:          0.085ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.155ns
-    Phase Error (PE):           0.000ns
+    Discrete Jitter (DJ):       0.177ns
+    Phase Error (PE):           0.120ns
 
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other to hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_3
+  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/framing_1 to hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_4
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X7Y69.BQ       Tcko                  0.391   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other
-    SLICE_X7Y74.B3       net (fanout=4)        1.044   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other
-    SLICE_X7Y74.BMUX     Tilo                  0.313   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/joined<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT1051
-    SLICE_X6Y70.C1       net (fanout=10)       1.392   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT105
-    SLICE_X6Y70.CLK      Tas                   0.289   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT53
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_3
+    SLICE_X3Y72.BMUX     Tshcko                0.461   hdmi_averager/Inst_dvid_in/framing<2>
+                                                       hdmi_averager/Inst_dvid_in/framing_1
+    SLICE_X5Y69.B4       net (fanout=54)       1.329   hdmi_averager/Inst_dvid_in/framing<1>
+    SLICE_X5Y69.BMUX     Tilo                  0.313   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT103
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT1011
+    SLICE_X7Y68.B3       net (fanout=10)       0.556   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT101
+    SLICE_X7Y68.B        Tilo                  0.259   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<5>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT62
+    SLICE_X7Y68.A5       net (fanout=1)        0.187   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT61
+    SLICE_X7Y68.CLK      Tas                   0.322   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<5>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT63
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_4
     -------------------------------------------------  ---------------------------
-    Total                                      3.429ns (0.993ns logic, 2.436ns route)
-                                                       (29.0% logic, 71.0% route)
+    Total                                      3.427ns (1.355ns logic, 2.072ns route)
+                                                       (39.5% logic, 60.5% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_2 (SLICE_X6Y70.A1), 4 paths
+Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_0 (SLICE_X6Y65.A5), 18 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     1.540ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     1.518ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               hdmi_averager/Inst_dvid_in/framing_1 (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_0 (FF)
+  Requirement:          6.000ns
+  Data Path Delay:      3.918ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.349ns (1.524 - 1.873)
+  Source Clock:         clk_pixel rising at 0.666ns
+  Destination Clock:    hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
+  Clock Uncertainty:    0.215ns
+
+  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.177ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/framing_1 to hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y72.BMUX     Tshcko                0.461   hdmi_averager/Inst_dvid_in/framing<2>
+                                                       hdmi_averager/Inst_dvid_in/framing_1
+    SLICE_X5Y69.B4       net (fanout=54)       1.329   hdmi_averager/Inst_dvid_in/framing<1>
+    SLICE_X5Y69.BMUX     Tilo                  0.313   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT103
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT1011
+    SLICE_X6Y65.B2       net (fanout=10)       1.101   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT101
+    SLICE_X6Y65.B        Tilo                  0.203   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<1>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT22
+    SLICE_X6Y65.A5       net (fanout=1)        0.222   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT21
+    SLICE_X6Y65.CLK      Tas                   0.289   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<1>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT23
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_0
+    -------------------------------------------------  ---------------------------
+    Total                                      3.918ns (1.266ns logic, 2.652ns route)
+                                                       (32.3% logic, 67.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.671ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               hdmi_averager/Inst_dvid_in/framing_1 (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_0 (FF)
+  Requirement:          6.000ns
+  Data Path Delay:      3.765ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.349ns (1.524 - 1.873)
+  Source Clock:         clk_pixel rising at 0.666ns
+  Destination Clock:    hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
+  Clock Uncertainty:    0.215ns
+
+  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.177ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/framing_1 to hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y72.BMUX     Tshcko                0.461   hdmi_averager/Inst_dvid_in/framing<2>
+                                                       hdmi_averager/Inst_dvid_in/framing_1
+    SLICE_X5Y69.B4       net (fanout=54)       1.329   hdmi_averager/Inst_dvid_in/framing<1>
+    SLICE_X5Y69.B        Tilo                  0.259   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT103
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT1031
+    SLICE_X6Y65.B3       net (fanout=10)       1.002   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT103
+    SLICE_X6Y65.B        Tilo                  0.203   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<1>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT22
+    SLICE_X6Y65.A5       net (fanout=1)        0.222   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT21
+    SLICE_X6Y65.CLK      Tas                   0.289   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<1>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT23
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_0
+    -------------------------------------------------  ---------------------------
+    Total                                      3.765ns (1.212ns logic, 2.553ns route)
+                                                       (32.2% logic, 67.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.768ns (requirement - (data path - clock path skew + uncertainty))
   Source:               hdmi_averager/Inst_dvid_in/framing_2 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_2 (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_0 (FF)
   Requirement:          6.000ns
-  Data Path Delay:      3.907ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.338ns (1.514 - 1.852)
+  Data Path Delay:      3.668ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.349ns (1.524 - 1.873)
   Source Clock:         clk_pixel rising at 0.666ns
   Destination Clock:    hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
   Clock Uncertainty:    0.215ns
@@ -359,88 +440,25 @@ Slack (setup path):     1.540ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.177ns
     Phase Error (PE):           0.120ns
 
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/framing_2 to hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_2
+  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/framing_2 to hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y73.CQ       Tcko                  0.447   hdmi_averager/Inst_dvid_in/framing<2>
+    SLICE_X3Y72.CQ       Tcko                  0.391   hdmi_averager/Inst_dvid_in/framing<2>
                                                        hdmi_averager/Inst_dvid_in/framing_2
-    SLICE_X7Y74.B2       net (fanout=11)       1.553   hdmi_averager/Inst_dvid_in/framing<2>
-    SLICE_X7Y74.BMUX     Tilo                  0.313   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/joined<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT1051
-    SLICE_X6Y70.A1       net (fanout=10)       1.305   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT105
-    SLICE_X6Y70.CLK      Tas                   0.289   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT43
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_2
+    SLICE_X5Y69.B3       net (fanout=11)       1.149   hdmi_averager/Inst_dvid_in/framing<2>
+    SLICE_X5Y69.BMUX     Tilo                  0.313   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT103
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT1011
+    SLICE_X6Y65.B2       net (fanout=10)       1.101   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT101
+    SLICE_X6Y65.B        Tilo                  0.203   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<1>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT22
+    SLICE_X6Y65.A5       net (fanout=1)        0.222   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT21
+    SLICE_X6Y65.CLK      Tas                   0.289   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<1>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT23
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_0
     -------------------------------------------------  ---------------------------
-    Total                                      3.907ns (1.049ns logic, 2.858ns route)
-                                                       (26.8% logic, 73.2% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     2.497ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               hdmi_averager/Inst_dvid_in/framing_3 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_2 (FF)
-  Requirement:          6.000ns
-  Data Path Delay:      2.950ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.338ns (1.514 - 1.852)
-  Source Clock:         clk_pixel rising at 0.666ns
-  Destination Clock:    hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
-  Clock Uncertainty:    0.215ns
-
-  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
-    Phase Error (PE):           0.120ns
-
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/framing_3 to hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X6Y73.CMUX     Tshcko                0.488   hdmi_averager/Inst_dvid_in/framing<2>
-                                                       hdmi_averager/Inst_dvid_in/framing_3
-    SLICE_X7Y74.B4       net (fanout=11)       0.555   hdmi_averager/Inst_dvid_in/framing<3>
-    SLICE_X7Y74.BMUX     Tilo                  0.313   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/joined<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT1051
-    SLICE_X6Y70.A1       net (fanout=10)       1.305   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT105
-    SLICE_X6Y70.CLK      Tas                   0.289   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT43
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_2
-    -------------------------------------------------  ---------------------------
-    Total                                      2.950ns (1.090ns logic, 1.860ns route)
-                                                       (36.9% logic, 63.1% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     2.561ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_2 (FF)
-  Requirement:          6.000ns
-  Data Path Delay:      3.342ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.012ns (0.144 - 0.156)
-  Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 0.666ns
-  Destination Clock:    hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
-  Clock Uncertainty:    0.085ns
-
-  Clock Uncertainty:          0.085ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.155ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other to hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y69.BQ       Tcko                  0.391   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other
-    SLICE_X7Y74.B3       net (fanout=4)        1.044   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other
-    SLICE_X7Y74.BMUX     Tilo                  0.313   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/joined<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT1051
-    SLICE_X6Y70.A1       net (fanout=10)       1.305   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT105
-    SLICE_X6Y70.CLK      Tas                   0.289   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT43
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_2
-    -------------------------------------------------  ---------------------------
-    Total                                      3.342ns (0.993ns logic, 2.349ns route)
-                                                       (29.7% logic, 70.3% route)
+    Total                                      3.668ns (1.196ns logic, 2.472ns route)
+                                                       (32.6% logic, 67.4% route)
 
 --------------------------------------------------------------------------------
 
@@ -450,14 +468,14 @@ Hold Paths: PERIOD analysis for net "hdmi_averager/Inst_dvid_in/clock_x2_unbuffe
 
 --------------------------------------------------------------------------------
 
-Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7 (SLICE_X6Y75.C6), 1 path
+Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_5 (SLICE_X3Y73.C6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.390ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      0.341ns (requirement - (clock path skew + uncertainty - data path))
   Source:               hdmi_averager/Inst_dvid_in/framing_1 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7 (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_5 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.690ns (Levels of Logic = 1)
-  Clock Path Skew:      0.085ns (0.971 - 0.886)
+  Data Path Delay:      0.637ns (Levels of Logic = 1)
+  Clock Path Skew:      0.081ns (0.988 - 0.907)
   Source Clock:         clk_pixel rising at 0.666ns
   Destination Clock:    hdmi_averager/Inst_dvid_in/clock_x2 rising at 0.666ns
   Clock Uncertainty:    0.215ns
@@ -467,80 +485,75 @@ Slack (hold path):      0.390ns (requirement - (clock path skew + uncertainty - 
     Discrete Jitter (DJ):       0.177ns
     Phase Error (PE):           0.120ns
 
-  Minimum Data Path at Fast Process Corner: hdmi_averager/Inst_dvid_in/framing_1 to hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7
+  Minimum Data Path at Fast Process Corner: hdmi_averager/Inst_dvid_in/framing_1 to hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_5
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y73.BMUX     Tshcko                0.266   hdmi_averager/Inst_dvid_in/framing<2>
+    SLICE_X3Y72.BMUX     Tshcko                0.244   hdmi_averager/Inst_dvid_in/framing<2>
                                                        hdmi_averager/Inst_dvid_in/framing_1
-    SLICE_X6Y75.C6       net (fanout=54)       0.227   hdmi_averager/Inst_dvid_in/framing<1>
-    SLICE_X6Y75.CLK      Tah         (-Th)    -0.197   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<7>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT93
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7
+    SLICE_X3Y73.C6       net (fanout=54)       0.178   hdmi_averager/Inst_dvid_in/framing<1>
+    SLICE_X3Y73.CLK      Tah         (-Th)    -0.215   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out<5>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT73
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_5
     -------------------------------------------------  ---------------------------
-    Total                                      0.690ns (0.463ns logic, 0.227ns route)
-                                                       (67.1% logic, 32.9% route)
+    Total                                      0.637ns (0.459ns logic, 0.178ns route)
+                                                       (72.1% logic, 27.9% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_1 (SLICE_X5Y74.C6), 1 path
+Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other (SLICE_X0Y74.A6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.417ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               hdmi_averager/Inst_dvid_in/framing_1 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_1 (FF)
+Slack (hold path):      0.413ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.720ns (Levels of Logic = 1)
-  Clock Path Skew:      0.088ns (0.974 - 0.886)
-  Source Clock:         clk_pixel rising at 0.666ns
-  Destination Clock:    hdmi_averager/Inst_dvid_in/clock_x2 rising at 0.666ns
-  Clock Uncertainty:    0.215ns
-
-  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
-    Phase Error (PE):           0.120ns
-
-  Minimum Data Path at Fast Process Corner: hdmi_averager/Inst_dvid_in/framing_1 to hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_1
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X6Y73.BMUX     Tshcko                0.266   hdmi_averager/Inst_dvid_in/framing<2>
-                                                       hdmi_averager/Inst_dvid_in/framing_1
-    SLICE_X5Y74.C6       net (fanout=54)       0.239   hdmi_averager/Inst_dvid_in/framing<1>
-    SLICE_X5Y74.CLK      Tah         (-Th)    -0.215   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<1>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT33
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_1
-    -------------------------------------------------  ---------------------------
-    Total                                      0.720ns (0.481ns logic, 0.239ns route)
-                                                       (66.8% logic, 33.2% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_7 (SLICE_X6Y72.C6), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.434ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/joined_7 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_7 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.436ns (Levels of Logic = 1)
-  Clock Path Skew:      0.002ns (0.031 - 0.029)
+  Data Path Delay:      0.413ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
   Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
   Destination Clock:    hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/joined_7 to hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_7
+  Minimum Data Path at Fast Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other to hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X7Y72.DQ       Tcko                  0.198   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/joined<7>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/joined_7
-    SLICE_X6Y72.C6       net (fanout=6)        0.041   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/joined<7>
-    SLICE_X6Y72.CLK      Tah         (-Th)    -0.197   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out<7>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/Mmux_framing[3]_framing[3]_mux_2_OUT93
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_7
+    SLICE_X0Y74.AQ       Tcko                  0.200   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other
+    SLICE_X0Y74.A6       net (fanout=4)        0.023   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other
+    SLICE_X0Y74.CLK      Tah         (-Th)    -0.190   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other_INV_44_o1_INV_0
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/every_other
     -------------------------------------------------  ---------------------------
-    Total                                      0.436ns (0.395ns logic, 0.041ns route)
-                                                       (90.6% logic, 9.4% route)
+    Total                                      0.413ns (0.390ns logic, 0.023ns route)
+                                                       (94.4% logic, 5.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/every_other (SLICE_X5Y76.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.435ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/every_other (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/every_other (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.435ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
+  Destination Clock:    hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/every_other to hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/every_other
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y76.AQ       Tcko                  0.198   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/every_other
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/every_other
+    SLICE_X5Y76.A6       net (fanout=4)        0.022   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/every_other
+    SLICE_X5Y76.CLK      Tah         (-Th)    -0.215   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/every_other
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/every_other_INV_44_o1_INV_0
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/every_other
+    -------------------------------------------------  ---------------------------
+    Total                                      0.435ns (0.413ns logic, 0.022ns route)
+                                                       (94.9% logic, 5.1% route)
 
 --------------------------------------------------------------------------------
 
@@ -562,7 +575,7 @@ Slack: 5.000ns (period - min period limit)
   Min period limit: 1.000ns (1000.000MHz) (Tcp)
   Physical resource: hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/joined<9>/CLK
   Logical resource: hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/Mshreg_joined_9/CLK
-  Location pin: SLICE_X6Y74.CLK
+  Location pin: SLICE_X2Y73.CLK
   Clock network: hdmi_averager/Inst_dvid_in/clock_x2
 --------------------------------------------------------------------------------
 Slack: 5.000ns (period - min period limit)
@@ -570,7 +583,7 @@ Slack: 5.000ns (period - min period limit)
   Min period limit: 1.000ns (1000.000MHz) (Tcp)
   Physical resource: hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/joined<9>/CLK
   Logical resource: hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/Mshreg_joined_9/CLK
-  Location pin: SLICE_X6Y74.CLK
+  Location pin: SLICE_X2Y73.CLK
   Clock network: hdmi_averager/Inst_dvid_in/clock_x2
 --------------------------------------------------------------------------------
 
@@ -580,19 +593,19 @@ Timing constraint: PERIOD analysis for net
 "hdmi_averager/Inst_dvid_in/dvid_clk" PERIOD = 12 ns HIGH 50%; 
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 97634 paths analyzed, 16997 endpoints analyzed, 0 failing endpoints
+ 99926 paths analyzed, 15770 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   9.147ns.
+ Minimum period is  10.373ns.
 --------------------------------------------------------------------------------
 
-Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_c_1 (SLICE_X4Y76.B1), 6 paths
+Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_6 (SLICE_X24Y65.CX), 1 path
 --------------------------------------------------------------------------------
-Slack (setup path):     1.847ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_5 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_c_1 (FF)
+Slack (setup path):     0.985ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_6 (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_6 (FF)
   Requirement:          6.000ns
-  Data Path Delay:      3.598ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.340ns (1.527 - 1.867)
+  Data Path Delay:      4.324ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.476ns (1.387 - 1.863)
   Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
   Destination Clock:    clk_pixel rising at 12.666ns
   Clock Uncertainty:    0.215ns
@@ -602,210 +615,29 @@ Slack (setup path):     1.847ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.177ns
     Phase Error (PE):           0.120ns
 
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_5 to hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_c_1
+  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_6 to hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_6
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X5Y76.CQ       Tcko                  0.391   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<5>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_5
-    SLICE_X1Y72.A1       net (fanout=5)        1.396   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<5>
-    SLICE_X1Y72.A        Tilo                  0.259   N184
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_GND_30_o_select_8_OUT<1>4_SW0
-    SLICE_X4Y76.B1       net (fanout=1)        1.211   N184
-    SLICE_X4Y76.CLK      Tas                   0.341   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_c<1>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_GND_30_o_select_8_OUT<1>4
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_c_1
+    SLICE_X4Y68.AQ       Tcko                  0.408   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<7>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_6
+    SLICE_X24Y65.CX      net (fanout=4)        3.780   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<6>
+    SLICE_X24Y65.CLK     Tdick                 0.136   hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed<7>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_6
     -------------------------------------------------  ---------------------------
-    Total                                      3.598ns (0.991ns logic, 2.607ns route)
-                                                       (27.5% logic, 72.5% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     2.025ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_3 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_c_1 (FF)
-  Requirement:          6.000ns
-  Data Path Delay:      3.423ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.337ns (1.527 - 1.864)
-  Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
-  Destination Clock:    clk_pixel rising at 12.666ns
-  Clock Uncertainty:    0.215ns
-
-  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
-    Phase Error (PE):           0.120ns
-
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_3 to hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_c_1
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X5Y75.CQ       Tcko                  0.391   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_3
-    SLICE_X1Y72.A3       net (fanout=5)        1.221   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<3>
-    SLICE_X1Y72.A        Tilo                  0.259   N184
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_GND_30_o_select_8_OUT<1>4_SW0
-    SLICE_X4Y76.B1       net (fanout=1)        1.211   N184
-    SLICE_X4Y76.CLK      Tas                   0.341   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_c<1>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_GND_30_o_select_8_OUT<1>4
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_c_1
-    -------------------------------------------------  ---------------------------
-    Total                                      3.423ns (0.991ns logic, 2.432ns route)
-                                                       (29.0% logic, 71.0% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     2.026ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_0 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_c_1 (FF)
-  Requirement:          6.000ns
-  Data Path Delay:      3.425ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.334ns (1.527 - 1.861)
-  Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
-  Destination Clock:    clk_pixel rising at 12.666ns
-  Clock Uncertainty:    0.215ns
-
-  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
-    Phase Error (PE):           0.120ns
-
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_0 to hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_c_1
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X5Y74.AQ       Tcko                  0.391   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<1>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_0
-    SLICE_X1Y72.A2       net (fanout=4)        1.223   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<0>
-    SLICE_X1Y72.A        Tilo                  0.259   N184
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_GND_30_o_select_8_OUT<1>4_SW0
-    SLICE_X4Y76.B1       net (fanout=1)        1.211   N184
-    SLICE_X4Y76.CLK      Tas                   0.341   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_c<1>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_GND_30_o_select_8_OUT<1>4
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_c_1
-    -------------------------------------------------  ---------------------------
-    Total                                      3.425ns (0.991ns logic, 2.434ns route)
-                                                       (28.9% logic, 71.1% route)
+    Total                                      4.324ns (0.544ns logic, 3.780ns route)
+                                                       (12.6% logic, 87.4% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_active (SLICE_X2Y74.A5), 10 paths
+Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_7 (SLICE_X24Y65.DX), 1 path
 --------------------------------------------------------------------------------
-Slack (setup path):     2.178ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_active (FF)
-  Requirement:          6.000ns
-  Data Path Delay:      3.289ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.318ns (1.540 - 1.858)
-  Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
-  Destination Clock:    clk_pixel rising at 12.666ns
-  Clock Uncertainty:    0.215ns
-
-  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
-    Phase Error (PE):           0.120ns
-
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7 to hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_active
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X6Y75.CQ       Tcko                  0.447   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<7>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_7
-    SLICE_X0Y73.A1       net (fanout=3)        1.343   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<7>
-    SLICE_X0Y73.A        Tilo                  0.205   hdmi_averager/clean_green/cleanSignal_generate[4].cleanSignal/removeBuffer[1]_PWR_14_o_MUX_2696_o_inv27
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_reduce_nor_8_o1
-    SLICE_X2Y74.B4       net (fanout=1)        0.580   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_reduce_nor_8_o1
-    SLICE_X2Y74.B        Tilo                  0.203   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_active
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_reduce_nor_8_o2
-    SLICE_X2Y74.A5       net (fanout=1)        0.222   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_reduce_nor_8_o2
-    SLICE_X2Y74.CLK      Tas                   0.289   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_active
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_reduce_nor_8_o3
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_active
-    -------------------------------------------------  ---------------------------
-    Total                                      3.289ns (1.144ns logic, 2.145ns route)
-                                                       (34.8% logic, 65.2% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     2.370ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_1 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_active (FF)
-  Requirement:          6.000ns
-  Data Path Delay:      3.094ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.321ns (1.540 - 1.861)
-  Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
-  Destination Clock:    clk_pixel rising at 12.666ns
-  Clock Uncertainty:    0.215ns
-
-  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
-    Phase Error (PE):           0.120ns
-
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_1 to hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_active
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X5Y74.CQ       Tcko                  0.391   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<1>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_1
-    SLICE_X0Y73.A2       net (fanout=5)        1.204   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<1>
-    SLICE_X0Y73.A        Tilo                  0.205   hdmi_averager/clean_green/cleanSignal_generate[4].cleanSignal/removeBuffer[1]_PWR_14_o_MUX_2696_o_inv27
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_reduce_nor_8_o1
-    SLICE_X2Y74.B4       net (fanout=1)        0.580   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_reduce_nor_8_o1
-    SLICE_X2Y74.B        Tilo                  0.203   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_active
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_reduce_nor_8_o2
-    SLICE_X2Y74.A5       net (fanout=1)        0.222   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_reduce_nor_8_o2
-    SLICE_X2Y74.CLK      Tas                   0.289   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_active
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_reduce_nor_8_o3
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_active
-    -------------------------------------------------  ---------------------------
-    Total                                      3.094ns (1.088ns logic, 2.006ns route)
-                                                       (35.2% logic, 64.8% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     2.404ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_8 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_active (FF)
-  Requirement:          6.000ns
-  Data Path Delay:      3.063ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.318ns (1.540 - 1.858)
-  Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
-  Destination Clock:    clk_pixel rising at 12.666ns
-  Clock Uncertainty:    0.215ns
-
-  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
-    Phase Error (PE):           0.120ns
-
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_8 to hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_active
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y75.AQ       Tcko                  0.391   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<9>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_8
-    SLICE_X0Y73.A6       net (fanout=4)        1.173   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<8>
-    SLICE_X0Y73.A        Tilo                  0.205   hdmi_averager/clean_green/cleanSignal_generate[4].cleanSignal/removeBuffer[1]_PWR_14_o_MUX_2696_o_inv27
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_reduce_nor_8_o1
-    SLICE_X2Y74.B4       net (fanout=1)        0.580   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_reduce_nor_8_o1
-    SLICE_X2Y74.B        Tilo                  0.203   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_active
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_reduce_nor_8_o2
-    SLICE_X2Y74.A5       net (fanout=1)        0.222   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_reduce_nor_8_o2
-    SLICE_X2Y74.CLK      Tas                   0.289   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_active
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/GND_30_o_reduce_nor_8_o3
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_active
-    -------------------------------------------------  ---------------------------
-    Total                                      3.063ns (1.088ns logic, 1.975ns route)
-                                                       (35.5% logic, 64.5% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_active (SLICE_X7Y67.A5), 10 paths
---------------------------------------------------------------------------------
-Slack (setup path):     2.593ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     1.097ns (requirement - (data path - clock path skew + uncertainty))
   Source:               hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_7 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_active (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_7 (FF)
   Requirement:          6.000ns
-  Data Path Delay:      2.839ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.353ns (1.522 - 1.875)
+  Data Path Delay:      4.212ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.476ns (1.387 - 1.863)
   Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
   Destination Clock:    clk_pixel rising at 12.666ns
   Clock Uncertainty:    0.215ns
@@ -815,33 +647,29 @@ Slack (setup path):     2.593ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.177ns
     Phase Error (PE):           0.120ns
 
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_7 to hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_active
+  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_7 to hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X3Y70.CQ       Tcko                  0.391   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<7>
+    SLICE_X4Y68.CQ       Tcko                  0.408   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<7>
                                                        hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_7
-    SLICE_X7Y68.A4       net (fanout=3)        1.069   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<7>
-    SLICE_X7Y68.A        Tilo                  0.259   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/joined<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/GND_30_o_reduce_nor_8_o1
-    SLICE_X7Y67.B5       net (fanout=1)        0.352   hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/GND_30_o_reduce_nor_8_o1
-    SLICE_X7Y67.B        Tilo                  0.259   hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_active
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/GND_30_o_reduce_nor_8_o2
-    SLICE_X7Y67.A5       net (fanout=1)        0.187   hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/GND_30_o_reduce_nor_8_o2
-    SLICE_X7Y67.CLK      Tas                   0.322   hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_active
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/GND_30_o_reduce_nor_8_o3
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_active
+    SLICE_X24Y65.DX      net (fanout=3)        3.668   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<7>
+    SLICE_X24Y65.CLK     Tdick                 0.136   hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed<7>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_7
     -------------------------------------------------  ---------------------------
-    Total                                      2.839ns (1.231ns logic, 1.608ns route)
-                                                       (43.4% logic, 56.6% route)
+    Total                                      4.212ns (0.544ns logic, 3.668ns route)
+                                                       (12.9% logic, 87.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     2.687ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_8 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_active (FF)
+
+Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_0 (SLICE_X24Y64.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     1.168ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_0 (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_0 (FF)
   Requirement:          6.000ns
-  Data Path Delay:      2.745ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.353ns (1.522 - 1.875)
+  Data Path Delay:      4.143ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.474ns (1.388 - 1.862)
   Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
   Destination Clock:    clk_pixel rising at 12.666ns
   Clock Uncertainty:    0.215ns
@@ -851,61 +679,18 @@ Slack (setup path):     2.687ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.177ns
     Phase Error (PE):           0.120ns
 
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_8 to hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_active
+  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_0 to hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X2Y70.AQ       Tcko                  0.447   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<9>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_8
-    SLICE_X7Y68.A6       net (fanout=4)        0.919   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<8>
-    SLICE_X7Y68.A        Tilo                  0.259   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/joined<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/GND_30_o_reduce_nor_8_o1
-    SLICE_X7Y67.B5       net (fanout=1)        0.352   hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/GND_30_o_reduce_nor_8_o1
-    SLICE_X7Y67.B        Tilo                  0.259   hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_active
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/GND_30_o_reduce_nor_8_o2
-    SLICE_X7Y67.A5       net (fanout=1)        0.187   hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/GND_30_o_reduce_nor_8_o2
-    SLICE_X7Y67.CLK      Tas                   0.322   hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_active
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/GND_30_o_reduce_nor_8_o3
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_active
+    SLICE_X6Y65.AQ       Tcko                  0.447   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<1>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_0
+    SLICE_X24Y64.AX      net (fanout=4)        3.560   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<0>
+    SLICE_X24Y64.CLK     Tdick                 0.136   hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed<3>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_0
     -------------------------------------------------  ---------------------------
-    Total                                      2.745ns (1.287ns logic, 1.458ns route)
-                                                       (46.9% logic, 53.1% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     2.841ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_5 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_active (FF)
-  Requirement:          6.000ns
-  Data Path Delay:      2.605ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.339ns (1.522 - 1.861)
-  Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 6.666ns
-  Destination Clock:    clk_pixel rising at 12.666ns
-  Clock Uncertainty:    0.215ns
-
-  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
-    Phase Error (PE):           0.120ns
-
-  Maximum Data Path at Slow Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_5 to hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_active
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X4Y69.CQ       Tcko                  0.408   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<5>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_5
-    SLICE_X7Y68.A5       net (fanout=5)        0.818   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<5>
-    SLICE_X7Y68.A        Tilo                  0.259   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/joined<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/GND_30_o_reduce_nor_8_o1
-    SLICE_X7Y67.B5       net (fanout=1)        0.352   hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/GND_30_o_reduce_nor_8_o1
-    SLICE_X7Y67.B        Tilo                  0.259   hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_active
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/GND_30_o_reduce_nor_8_o2
-    SLICE_X7Y67.A5       net (fanout=1)        0.187   hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/GND_30_o_reduce_nor_8_o2
-    SLICE_X7Y67.CLK      Tas                   0.322   hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_active
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/GND_30_o_reduce_nor_8_o3
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_active
-    -------------------------------------------------  ---------------------------
-    Total                                      2.605ns (1.248ns logic, 1.357ns route)
-                                                       (47.9% logic, 52.1% route)
+    Total                                      4.143ns (0.583ns logic, 3.560ns route)
+                                                       (14.1% logic, 85.9% route)
 
 --------------------------------------------------------------------------------
 
@@ -914,78 +699,14 @@ Hold Paths: PERIOD analysis for net "hdmi_averager/Inst_dvid_in/clock_x1_unbuffe
 
 --------------------------------------------------------------------------------
 
-Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c1/i_tmds_decode/data_delayed_3 (SLICE_X7Y70.DX), 1 path
+Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_0 (SLICE_X6Y73.AX), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.143ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_3 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c1/i_tmds_decode/data_delayed_3 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.438ns (Levels of Logic = 0)
-  Clock Path Skew:      0.080ns (0.966 - 0.886)
-  Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 12.666ns
-  Destination Clock:    clk_pixel rising at 12.666ns
-  Clock Uncertainty:    0.215ns
-
-  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
-    Phase Error (PE):           0.120ns
-
-  Minimum Data Path at Fast Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_3 to hdmi_averager/Inst_dvid_in/input_channel_c1/i_tmds_decode/data_delayed_3
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X6Y70.CQ       Tcko                  0.234   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_3
-    SLICE_X7Y70.DX       net (fanout=3)        0.145   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out<3>
-    SLICE_X7Y70.CLK      Tckdi       (-Th)    -0.059   hdmi_averager/Inst_dvid_in/input_channel_c1/i_tmds_decode/data_delayed<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_tmds_decode/data_delayed_3
-    -------------------------------------------------  ---------------------------
-    Total                                      0.438ns (0.293ns logic, 0.145ns route)
-                                                       (66.9% logic, 33.1% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c1/i_tmds_decode/data_delayed_0 (SLICE_X7Y70.AX), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.153ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_0 (FF)
-  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c1/i_tmds_decode/data_delayed_0 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.450ns (Levels of Logic = 0)
-  Clock Path Skew:      0.082ns (0.966 - 0.884)
-  Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 12.666ns
-  Destination Clock:    clk_pixel rising at 12.666ns
-  Clock Uncertainty:    0.215ns
-
-  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
-    Phase Error (PE):           0.120ns
-
-  Minimum Data Path at Fast Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_0 to hdmi_averager/Inst_dvid_in/input_channel_c1/i_tmds_decode/data_delayed_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y71.AQ       Tcko                  0.198   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out<1>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out_0
-    SLICE_X7Y70.AX       net (fanout=2)        0.193   hdmi_averager/Inst_dvid_in/input_channel_c1/i_gearbox/data_out<0>
-    SLICE_X7Y70.CLK      Tckdi       (-Th)    -0.059   hdmi_averager/Inst_dvid_in/input_channel_c1/i_tmds_decode/data_delayed<3>
-                                                       hdmi_averager/Inst_dvid_in/input_channel_c1/i_tmds_decode/data_delayed_0
-    -------------------------------------------------  ---------------------------
-    Total                                      0.450ns (0.257ns logic, 0.193ns route)
-                                                       (57.1% logic, 42.9% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_0 (SLICE_X5Y72.AX), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.182ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      0.175ns (requirement - (clock path skew + uncertainty - data path))
   Source:               hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_0 (FF)
   Destination:          hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_0 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.472ns (Levels of Logic = 0)
-  Clock Path Skew:      0.075ns (0.970 - 0.895)
+  Data Path Delay:      0.466ns (Levels of Logic = 0)
+  Clock Path Skew:      0.076ns (0.965 - 0.889)
   Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 12.666ns
   Destination Clock:    clk_pixel rising at 12.666ns
   Clock Uncertainty:    0.215ns
@@ -999,14 +720,78 @@ Slack (hold path):      0.182ns (requirement - (clock path skew + uncertainty - 
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X5Y74.AQ       Tcko                  0.198   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<1>
+    SLICE_X7Y74.AQ       Tcko                  0.198   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<1>
                                                        hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_0
-    SLICE_X5Y72.AX       net (fanout=4)        0.215   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<0>
-    SLICE_X5Y72.CLK      Tckdi       (-Th)    -0.059   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed<3>
+    SLICE_X6Y73.AX       net (fanout=4)        0.227   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<0>
+    SLICE_X6Y73.CLK      Tckdi       (-Th)    -0.041   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed<3>
                                                        hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_0
     -------------------------------------------------  ---------------------------
-    Total                                      0.472ns (0.257ns logic, 0.215ns route)
-                                                       (54.4% logic, 45.6% route)
+    Total                                      0.466ns (0.239ns logic, 0.227ns route)
+                                                       (51.3% logic, 48.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/Mshreg_sometimes_inverted_8 (SLICE_X6Y71.BI), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.231ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_8 (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/Mshreg_sometimes_inverted_8 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.514ns (Levels of Logic = 0)
+  Clock Path Skew:      0.068ns (0.963 - 0.895)
+  Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 12.666ns
+  Destination Clock:    clk_pixel rising at 12.666ns
+  Clock Uncertainty:    0.215ns
+
+  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.177ns
+    Phase Error (PE):           0.120ns
+
+  Minimum Data Path at Fast Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_8 to hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/Mshreg_sometimes_inverted_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y69.AQ       Tcko                  0.200   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<9>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out_8
+    SLICE_X6Y71.BI       net (fanout=4)        0.285   hdmi_averager/Inst_dvid_in/input_channel_c2/i_gearbox/data_out<8>
+    SLICE_X6Y71.CLK      Tdh         (-Th)    -0.029   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/sometimes_inverted<8>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/Mshreg_sometimes_inverted_8
+    -------------------------------------------------  ---------------------------
+    Total                                      0.514ns (0.229ns logic, 0.285ns route)
+                                                       (44.6% logic, 55.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_1 (SLICE_X6Y73.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.310ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_1 (FF)
+  Destination:          hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.601ns (Levels of Logic = 0)
+  Clock Path Skew:      0.076ns (0.965 - 0.889)
+  Source Clock:         hdmi_averager/Inst_dvid_in/clock_x2 rising at 12.666ns
+  Destination Clock:    clk_pixel rising at 12.666ns
+  Clock Uncertainty:    0.215ns
+
+  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.177ns
+    Phase Error (PE):           0.120ns
+
+  Minimum Data Path at Fast Process Corner: hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_1 to hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y74.CQ       Tcko                  0.198   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<1>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out_1
+    SLICE_X6Y73.BX       net (fanout=5)        0.362   hdmi_averager/Inst_dvid_in/input_channel_c0/i_gearbox/data_out<1>
+    SLICE_X6Y73.CLK      Tckdi       (-Th)    -0.041   hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed<3>
+                                                       hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/data_delayed_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.601ns (0.239ns logic, 0.362ns route)
+                                                       (39.8% logic, 60.2% route)
 
 --------------------------------------------------------------------------------
 
@@ -1025,17 +810,17 @@ Slack: 10.270ns (period - min period limit)
 Slack: 11.000ns (period - min period limit)
   Period: 12.000ns
   Min period limit: 1.000ns (1000.000MHz) (Tcp)
-  Physical resource: hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/sometimes_inverted<8>/CLK
-  Logical resource: hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/Mshreg_sometimes_inverted_8/CLK
-  Location pin: SLICE_X6Y64.CLK
+  Physical resource: hdmi_averager/clean_vsync/removeBuffer<3>/CLK
+  Logical resource: hdmi_averager/clean_vsync/Mshreg_removeBuffer_0/CLK
+  Location pin: SLICE_X6Y63.CLK
   Clock network: clk_pixel
 --------------------------------------------------------------------------------
 Slack: 11.000ns (period - min period limit)
   Period: 12.000ns
   Min period limit: 1.000ns (1000.000MHz) (Tcp)
   Physical resource: hdmi_averager/Inst_dvid_in/input_channel_c0/i_tmds_decode/sometimes_inverted<8>/CLK
-  Logical resource: hdmi_averager/Inst_dvid_in/input_channel_c1/i_tmds_decode/Mshreg_sometimes_inverted_8/CLK
-  Location pin: SLICE_X6Y64.CLK
+  Logical resource: hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/Mshreg_sometimes_inverted_8/CLK
+  Location pin: SLICE_X6Y71.CLK
   Clock network: clk_pixel
 --------------------------------------------------------------------------------
 
@@ -1043,19 +828,19 @@ Slack: 11.000ns (period - min period limit)
 Timing constraint: NET "clk_50_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 34629 paths analyzed, 13869 endpoints analyzed, 0 failing endpoints
+ 32688 paths analyzed, 14174 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   8.756ns.
+ Minimum period is   9.590ns.
 --------------------------------------------------------------------------------
 
-Paths for end point uart/rx_controller/custom_block_values_222 (SLICE_X33Y62.CE), 12 paths
+Paths for end point neoPixel/pixelGenerator/blockCountRegister_184 (SLICE_X47Y8.D1), 2 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     11.244ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               uart/uart_serial_rx/r_RX_DV (FF)
-  Destination:          uart/rx_controller/custom_block_values_222 (FF)
+Slack (setup path):     10.410ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               run_neopixel (FF)
+  Destination:          neoPixel/pixelGenerator/blockCountRegister_184 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      8.598ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.123ns (0.429 - 0.552)
+  Data Path Delay:      9.578ns (Levels of Logic = 2)
+  Clock Path Skew:      0.023ns (0.411 - 0.388)
   Source Clock:         clk_50_BUFGP rising at 0.000ns
   Destination Clock:    clk_50_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1066,32 +851,30 @@ Slack (setup path):     11.244ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: uart/uart_serial_rx/r_RX_DV to uart/rx_controller/custom_block_values_222
+  Maximum Data Path at Slow Process Corner: run_neopixel to neoPixel/pixelGenerator/blockCountRegister_184
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X52Y4.AMUX     Tshcko                0.455   uart/uart_serial_rx/r_SM_Main_FSM_FFd2
-                                                       uart/uart_serial_rx/r_RX_DV
-    SLICE_X43Y23.A4      net (fanout=5)        1.996   uart/uart_serial_rx/r_RX_DV
-    SLICE_X43Y23.A       Tilo                  0.259   uart/rx_controller/custom_block_change
-                                                       uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A4      net (fanout=25)       4.155   uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A       Tilo                  0.259   uart/rx_controller/_n0119_inv116
-                                                       uart/rx_controller/_n0119_inv1_17
-    SLICE_X33Y62.CE      net (fanout=8)        1.134   uart/rx_controller/_n0119_inv116
-    SLICE_X33Y62.CLK     Tceck                 0.340   uart/rx_controller/custom_block_values<223>
-                                                       uart/rx_controller/custom_block_values_222
+    SLICE_X23Y25.AQ      Tcko                  0.391   run_neopixel
+                                                       run_neopixel
+    SLICE_X12Y2.B4       net (fanout=782)      3.573   run_neopixel
+    SLICE_X12Y2.B        Tilo                  0.205   neoPixel/pixelGenerator/valid_pixel
+                                                       neoPixel/pixelGenerator/state_FSM_FFd11-In1
+    SLICE_X47Y8.D1       net (fanout=256)      5.087   neoPixel/pixelGenerator/GND_9_o_nextState[3]_equal_26_o
+    SLICE_X47Y8.CLK      Tas                   0.322   neoPixel/pixelGenerator/blockCountRegister<184>
+                                                       neoPixel/pixelGenerator/blockCountRegister[255]_pixelBlockCount[0]_mux_28_OUT<184>1
+                                                       neoPixel/pixelGenerator/blockCountRegister_184
     -------------------------------------------------  ---------------------------
-    Total                                      8.598ns (1.313ns logic, 7.285ns route)
-                                                       (15.3% logic, 84.7% route)
+    Total                                      9.578ns (0.918ns logic, 8.660ns route)
+                                                       (9.6% logic, 90.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     12.185ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               uart/rx_controller/currentIndex_3 (FF)
-  Destination:          uart/rx_controller/custom_block_values_222 (FF)
+Slack (setup path):     13.715ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               neoPixel/pixelGenerator/state_FSM_FFd12 (FF)
+  Destination:          neoPixel/pixelGenerator/blockCountRegister_184 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      7.744ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.036ns (0.429 - 0.465)
+  Data Path Delay:      6.161ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.089ns (0.411 - 0.500)
   Source Clock:         clk_50_BUFGP rising at 0.000ns
   Destination Clock:    clk_50_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1102,35 +885,33 @@ Slack (setup path):     12.185ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: uart/rx_controller/currentIndex_3 to uart/rx_controller/custom_block_values_222
+  Maximum Data Path at Slow Process Corner: neoPixel/pixelGenerator/state_FSM_FFd12 to neoPixel/pixelGenerator/blockCountRegister_184
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X38Y24.CMUX    Tshcko                0.488   uart/rx_controller/currentIndex<5>
-                                                       uart/rx_controller/currentIndex_3
-    SLICE_X39Y23.A4      net (fanout=5)        0.500   uart/rx_controller/currentIndex<3>
-    SLICE_X39Y23.A       Tilo                  0.259   hdmi_averager/Inst_averager/framebuffer<703>
-                                                       uart/rx_controller/_n0113_inv1_SW0
-    SLICE_X43Y23.A6      net (fanout=2)        0.350   N52
-    SLICE_X43Y23.A       Tilo                  0.259   uart/rx_controller/custom_block_change
-                                                       uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A4      net (fanout=25)       4.155   uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A       Tilo                  0.259   uart/rx_controller/_n0119_inv116
-                                                       uart/rx_controller/_n0119_inv1_17
-    SLICE_X33Y62.CE      net (fanout=8)        1.134   uart/rx_controller/_n0119_inv116
-    SLICE_X33Y62.CLK     Tceck                 0.340   uart/rx_controller/custom_block_values<223>
-                                                       uart/rx_controller/custom_block_values_222
+    SLICE_X13Y2.AQ       Tcko                  0.391   neoPixel/pixelGenerator/last_pixel
+                                                       neoPixel/pixelGenerator/state_FSM_FFd12
+    SLICE_X12Y2.B6       net (fanout=779)      0.156   neoPixel/pixelGenerator/state_FSM_FFd12
+    SLICE_X12Y2.B        Tilo                  0.205   neoPixel/pixelGenerator/valid_pixel
+                                                       neoPixel/pixelGenerator/state_FSM_FFd11-In1
+    SLICE_X47Y8.D1       net (fanout=256)      5.087   neoPixel/pixelGenerator/GND_9_o_nextState[3]_equal_26_o
+    SLICE_X47Y8.CLK      Tas                   0.322   neoPixel/pixelGenerator/blockCountRegister<184>
+                                                       neoPixel/pixelGenerator/blockCountRegister[255]_pixelBlockCount[0]_mux_28_OUT<184>1
+                                                       neoPixel/pixelGenerator/blockCountRegister_184
     -------------------------------------------------  ---------------------------
-    Total                                      7.744ns (1.605ns logic, 6.139ns route)
-                                                       (20.7% logic, 79.3% route)
+    Total                                      6.161ns (0.918ns logic, 5.243ns route)
+                                                       (14.9% logic, 85.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     12.235ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               uart/rx_controller/currentIndex_1 (FF)
-  Destination:          uart/rx_controller/custom_block_values_222 (FF)
+
+Paths for end point neoPixel/pixelGenerator/blockCountRegister_183 (SLICE_X47Y8.C1), 2 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     10.453ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               run_neopixel (FF)
+  Destination:          neoPixel/pixelGenerator/blockCountRegister_183 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      7.694ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.036ns (0.429 - 0.465)
+  Data Path Delay:      9.535ns (Levels of Logic = 2)
+  Clock Path Skew:      0.023ns (0.411 - 0.388)
   Source Clock:         clk_50_BUFGP rising at 0.000ns
   Destination Clock:    clk_50_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1141,38 +922,30 @@ Slack (setup path):     12.235ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: uart/rx_controller/currentIndex_1 to uart/rx_controller/custom_block_values_222
+  Maximum Data Path at Slow Process Corner: run_neopixel to neoPixel/pixelGenerator/blockCountRegister_183
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X38Y24.BQ      Tcko                  0.447   uart/rx_controller/currentIndex<5>
-                                                       uart/rx_controller/currentIndex_1
-    SLICE_X39Y23.A3      net (fanout=5)        0.491   uart/rx_controller/currentIndex<1>
-    SLICE_X39Y23.A       Tilo                  0.259   hdmi_averager/Inst_averager/framebuffer<703>
-                                                       uart/rx_controller/_n0113_inv1_SW0
-    SLICE_X43Y23.A6      net (fanout=2)        0.350   N52
-    SLICE_X43Y23.A       Tilo                  0.259   uart/rx_controller/custom_block_change
-                                                       uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A4      net (fanout=25)       4.155   uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A       Tilo                  0.259   uart/rx_controller/_n0119_inv116
-                                                       uart/rx_controller/_n0119_inv1_17
-    SLICE_X33Y62.CE      net (fanout=8)        1.134   uart/rx_controller/_n0119_inv116
-    SLICE_X33Y62.CLK     Tceck                 0.340   uart/rx_controller/custom_block_values<223>
-                                                       uart/rx_controller/custom_block_values_222
+    SLICE_X23Y25.AQ      Tcko                  0.391   run_neopixel
+                                                       run_neopixel
+    SLICE_X12Y2.B4       net (fanout=782)      3.573   run_neopixel
+    SLICE_X12Y2.B        Tilo                  0.205   neoPixel/pixelGenerator/valid_pixel
+                                                       neoPixel/pixelGenerator/state_FSM_FFd11-In1
+    SLICE_X47Y8.C1       net (fanout=256)      5.044   neoPixel/pixelGenerator/GND_9_o_nextState[3]_equal_26_o
+    SLICE_X47Y8.CLK      Tas                   0.322   neoPixel/pixelGenerator/blockCountRegister<184>
+                                                       neoPixel/pixelGenerator/blockCountRegister[255]_pixelBlockCount[0]_mux_28_OUT<183>1
+                                                       neoPixel/pixelGenerator/blockCountRegister_183
     -------------------------------------------------  ---------------------------
-    Total                                      7.694ns (1.564ns logic, 6.130ns route)
-                                                       (20.3% logic, 79.7% route)
+    Total                                      9.535ns (0.918ns logic, 8.617ns route)
+                                                       (9.6% logic, 90.4% route)
 
 --------------------------------------------------------------------------------
-
-Paths for end point uart/rx_controller/custom_block_values_221 (SLICE_X33Y62.CE), 12 paths
---------------------------------------------------------------------------------
-Slack (setup path):     11.260ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               uart/uart_serial_rx/r_RX_DV (FF)
-  Destination:          uart/rx_controller/custom_block_values_221 (FF)
+Slack (setup path):     13.758ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               neoPixel/pixelGenerator/state_FSM_FFd12 (FF)
+  Destination:          neoPixel/pixelGenerator/blockCountRegister_183 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      8.582ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.123ns (0.429 - 0.552)
+  Data Path Delay:      6.118ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.089ns (0.411 - 0.500)
   Source Clock:         clk_50_BUFGP rising at 0.000ns
   Destination Clock:    clk_50_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1183,149 +956,33 @@ Slack (setup path):     11.260ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: uart/uart_serial_rx/r_RX_DV to uart/rx_controller/custom_block_values_221
+  Maximum Data Path at Slow Process Corner: neoPixel/pixelGenerator/state_FSM_FFd12 to neoPixel/pixelGenerator/blockCountRegister_183
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X52Y4.AMUX     Tshcko                0.455   uart/uart_serial_rx/r_SM_Main_FSM_FFd2
-                                                       uart/uart_serial_rx/r_RX_DV
-    SLICE_X43Y23.A4      net (fanout=5)        1.996   uart/uart_serial_rx/r_RX_DV
-    SLICE_X43Y23.A       Tilo                  0.259   uart/rx_controller/custom_block_change
-                                                       uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A4      net (fanout=25)       4.155   uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A       Tilo                  0.259   uart/rx_controller/_n0119_inv116
-                                                       uart/rx_controller/_n0119_inv1_17
-    SLICE_X33Y62.CE      net (fanout=8)        1.134   uart/rx_controller/_n0119_inv116
-    SLICE_X33Y62.CLK     Tceck                 0.324   uart/rx_controller/custom_block_values<223>
-                                                       uart/rx_controller/custom_block_values_221
+    SLICE_X13Y2.AQ       Tcko                  0.391   neoPixel/pixelGenerator/last_pixel
+                                                       neoPixel/pixelGenerator/state_FSM_FFd12
+    SLICE_X12Y2.B6       net (fanout=779)      0.156   neoPixel/pixelGenerator/state_FSM_FFd12
+    SLICE_X12Y2.B        Tilo                  0.205   neoPixel/pixelGenerator/valid_pixel
+                                                       neoPixel/pixelGenerator/state_FSM_FFd11-In1
+    SLICE_X47Y8.C1       net (fanout=256)      5.044   neoPixel/pixelGenerator/GND_9_o_nextState[3]_equal_26_o
+    SLICE_X47Y8.CLK      Tas                   0.322   neoPixel/pixelGenerator/blockCountRegister<184>
+                                                       neoPixel/pixelGenerator/blockCountRegister[255]_pixelBlockCount[0]_mux_28_OUT<183>1
+                                                       neoPixel/pixelGenerator/blockCountRegister_183
     -------------------------------------------------  ---------------------------
-    Total                                      8.582ns (1.297ns logic, 7.285ns route)
-                                                       (15.1% logic, 84.9% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     12.201ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               uart/rx_controller/currentIndex_3 (FF)
-  Destination:          uart/rx_controller/custom_block_values_221 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      7.728ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.036ns (0.429 - 0.465)
-  Source Clock:         clk_50_BUFGP rising at 0.000ns
-  Destination Clock:    clk_50_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: uart/rx_controller/currentIndex_3 to uart/rx_controller/custom_block_values_221
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X38Y24.CMUX    Tshcko                0.488   uart/rx_controller/currentIndex<5>
-                                                       uart/rx_controller/currentIndex_3
-    SLICE_X39Y23.A4      net (fanout=5)        0.500   uart/rx_controller/currentIndex<3>
-    SLICE_X39Y23.A       Tilo                  0.259   hdmi_averager/Inst_averager/framebuffer<703>
-                                                       uart/rx_controller/_n0113_inv1_SW0
-    SLICE_X43Y23.A6      net (fanout=2)        0.350   N52
-    SLICE_X43Y23.A       Tilo                  0.259   uart/rx_controller/custom_block_change
-                                                       uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A4      net (fanout=25)       4.155   uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A       Tilo                  0.259   uart/rx_controller/_n0119_inv116
-                                                       uart/rx_controller/_n0119_inv1_17
-    SLICE_X33Y62.CE      net (fanout=8)        1.134   uart/rx_controller/_n0119_inv116
-    SLICE_X33Y62.CLK     Tceck                 0.324   uart/rx_controller/custom_block_values<223>
-                                                       uart/rx_controller/custom_block_values_221
-    -------------------------------------------------  ---------------------------
-    Total                                      7.728ns (1.589ns logic, 6.139ns route)
-                                                       (20.6% logic, 79.4% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     12.251ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               uart/rx_controller/currentIndex_1 (FF)
-  Destination:          uart/rx_controller/custom_block_values_221 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      7.678ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.036ns (0.429 - 0.465)
-  Source Clock:         clk_50_BUFGP rising at 0.000ns
-  Destination Clock:    clk_50_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: uart/rx_controller/currentIndex_1 to uart/rx_controller/custom_block_values_221
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X38Y24.BQ      Tcko                  0.447   uart/rx_controller/currentIndex<5>
-                                                       uart/rx_controller/currentIndex_1
-    SLICE_X39Y23.A3      net (fanout=5)        0.491   uart/rx_controller/currentIndex<1>
-    SLICE_X39Y23.A       Tilo                  0.259   hdmi_averager/Inst_averager/framebuffer<703>
-                                                       uart/rx_controller/_n0113_inv1_SW0
-    SLICE_X43Y23.A6      net (fanout=2)        0.350   N52
-    SLICE_X43Y23.A       Tilo                  0.259   uart/rx_controller/custom_block_change
-                                                       uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A4      net (fanout=25)       4.155   uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A       Tilo                  0.259   uart/rx_controller/_n0119_inv116
-                                                       uart/rx_controller/_n0119_inv1_17
-    SLICE_X33Y62.CE      net (fanout=8)        1.134   uart/rx_controller/_n0119_inv116
-    SLICE_X33Y62.CLK     Tceck                 0.324   uart/rx_controller/custom_block_values<223>
-                                                       uart/rx_controller/custom_block_values_221
-    -------------------------------------------------  ---------------------------
-    Total                                      7.678ns (1.548ns logic, 6.130ns route)
-                                                       (20.2% logic, 79.8% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point uart/rx_controller/custom_block_values_223 (SLICE_X33Y62.CE), 12 paths
---------------------------------------------------------------------------------
-Slack (setup path):     11.268ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               uart/uart_serial_rx/r_RX_DV (FF)
-  Destination:          uart/rx_controller/custom_block_values_223 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      8.574ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.123ns (0.429 - 0.552)
-  Source Clock:         clk_50_BUFGP rising at 0.000ns
-  Destination Clock:    clk_50_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: uart/uart_serial_rx/r_RX_DV to uart/rx_controller/custom_block_values_223
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X52Y4.AMUX     Tshcko                0.455   uart/uart_serial_rx/r_SM_Main_FSM_FFd2
-                                                       uart/uart_serial_rx/r_RX_DV
-    SLICE_X43Y23.A4      net (fanout=5)        1.996   uart/uart_serial_rx/r_RX_DV
-    SLICE_X43Y23.A       Tilo                  0.259   uart/rx_controller/custom_block_change
-                                                       uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A4      net (fanout=25)       4.155   uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A       Tilo                  0.259   uart/rx_controller/_n0119_inv116
-                                                       uart/rx_controller/_n0119_inv1_17
-    SLICE_X33Y62.CE      net (fanout=8)        1.134   uart/rx_controller/_n0119_inv116
-    SLICE_X33Y62.CLK     Tceck                 0.316   uart/rx_controller/custom_block_values<223>
-                                                       uart/rx_controller/custom_block_values_223
-    -------------------------------------------------  ---------------------------
-    Total                                      8.574ns (1.289ns logic, 7.285ns route)
+    Total                                      6.118ns (0.918ns logic, 5.200ns route)
                                                        (15.0% logic, 85.0% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     12.209ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               uart/rx_controller/currentIndex_3 (FF)
-  Destination:          uart/rx_controller/custom_block_values_223 (FF)
+
+Paths for end point neoPixel/pixelGenerator/blockCountRegister_191 (SLICE_X47Y7.C2), 2 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     10.647ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               run_neopixel (FF)
+  Destination:          neoPixel/pixelGenerator/blockCountRegister_191 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      7.720ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.036ns (0.429 - 0.465)
+  Data Path Delay:      9.341ns (Levels of Logic = 2)
+  Clock Path Skew:      0.023ns (0.411 - 0.388)
   Source Clock:         clk_50_BUFGP rising at 0.000ns
   Destination Clock:    clk_50_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1336,35 +993,30 @@ Slack (setup path):     12.209ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: uart/rx_controller/currentIndex_3 to uart/rx_controller/custom_block_values_223
+  Maximum Data Path at Slow Process Corner: run_neopixel to neoPixel/pixelGenerator/blockCountRegister_191
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X38Y24.CMUX    Tshcko                0.488   uart/rx_controller/currentIndex<5>
-                                                       uart/rx_controller/currentIndex_3
-    SLICE_X39Y23.A4      net (fanout=5)        0.500   uart/rx_controller/currentIndex<3>
-    SLICE_X39Y23.A       Tilo                  0.259   hdmi_averager/Inst_averager/framebuffer<703>
-                                                       uart/rx_controller/_n0113_inv1_SW0
-    SLICE_X43Y23.A6      net (fanout=2)        0.350   N52
-    SLICE_X43Y23.A       Tilo                  0.259   uart/rx_controller/custom_block_change
-                                                       uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A4      net (fanout=25)       4.155   uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A       Tilo                  0.259   uart/rx_controller/_n0119_inv116
-                                                       uart/rx_controller/_n0119_inv1_17
-    SLICE_X33Y62.CE      net (fanout=8)        1.134   uart/rx_controller/_n0119_inv116
-    SLICE_X33Y62.CLK     Tceck                 0.316   uart/rx_controller/custom_block_values<223>
-                                                       uart/rx_controller/custom_block_values_223
+    SLICE_X23Y25.AQ      Tcko                  0.391   run_neopixel
+                                                       run_neopixel
+    SLICE_X12Y2.B4       net (fanout=782)      3.573   run_neopixel
+    SLICE_X12Y2.B        Tilo                  0.205   neoPixel/pixelGenerator/valid_pixel
+                                                       neoPixel/pixelGenerator/state_FSM_FFd11-In1
+    SLICE_X47Y7.C2       net (fanout=256)      4.850   neoPixel/pixelGenerator/GND_9_o_nextState[3]_equal_26_o
+    SLICE_X47Y7.CLK      Tas                   0.322   neoPixel/pixelGenerator/blockCountRegister<192>
+                                                       neoPixel/pixelGenerator/blockCountRegister[255]_pixelBlockCount[0]_mux_28_OUT<191>1
+                                                       neoPixel/pixelGenerator/blockCountRegister_191
     -------------------------------------------------  ---------------------------
-    Total                                      7.720ns (1.581ns logic, 6.139ns route)
-                                                       (20.5% logic, 79.5% route)
+    Total                                      9.341ns (0.918ns logic, 8.423ns route)
+                                                       (9.8% logic, 90.2% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     12.259ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               uart/rx_controller/currentIndex_1 (FF)
-  Destination:          uart/rx_controller/custom_block_values_223 (FF)
+Slack (setup path):     13.952ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               neoPixel/pixelGenerator/state_FSM_FFd12 (FF)
+  Destination:          neoPixel/pixelGenerator/blockCountRegister_191 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      7.670ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.036ns (0.429 - 0.465)
+  Data Path Delay:      5.924ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.089ns (0.411 - 0.500)
   Source Clock:         clk_50_BUFGP rising at 0.000ns
   Destination Clock:    clk_50_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1375,111 +1027,106 @@ Slack (setup path):     12.259ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: uart/rx_controller/currentIndex_1 to uart/rx_controller/custom_block_values_223
+  Maximum Data Path at Slow Process Corner: neoPixel/pixelGenerator/state_FSM_FFd12 to neoPixel/pixelGenerator/blockCountRegister_191
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X38Y24.BQ      Tcko                  0.447   uart/rx_controller/currentIndex<5>
-                                                       uart/rx_controller/currentIndex_1
-    SLICE_X39Y23.A3      net (fanout=5)        0.491   uart/rx_controller/currentIndex<1>
-    SLICE_X39Y23.A       Tilo                  0.259   hdmi_averager/Inst_averager/framebuffer<703>
-                                                       uart/rx_controller/_n0113_inv1_SW0
-    SLICE_X43Y23.A6      net (fanout=2)        0.350   N52
-    SLICE_X43Y23.A       Tilo                  0.259   uart/rx_controller/custom_block_change
-                                                       uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A4      net (fanout=25)       4.155   uart/rx_controller/_n0113_inv1
-    SLICE_X33Y54.A       Tilo                  0.259   uart/rx_controller/_n0119_inv116
-                                                       uart/rx_controller/_n0119_inv1_17
-    SLICE_X33Y62.CE      net (fanout=8)        1.134   uart/rx_controller/_n0119_inv116
-    SLICE_X33Y62.CLK     Tceck                 0.316   uart/rx_controller/custom_block_values<223>
-                                                       uart/rx_controller/custom_block_values_223
+    SLICE_X13Y2.AQ       Tcko                  0.391   neoPixel/pixelGenerator/last_pixel
+                                                       neoPixel/pixelGenerator/state_FSM_FFd12
+    SLICE_X12Y2.B6       net (fanout=779)      0.156   neoPixel/pixelGenerator/state_FSM_FFd12
+    SLICE_X12Y2.B        Tilo                  0.205   neoPixel/pixelGenerator/valid_pixel
+                                                       neoPixel/pixelGenerator/state_FSM_FFd11-In1
+    SLICE_X47Y7.C2       net (fanout=256)      4.850   neoPixel/pixelGenerator/GND_9_o_nextState[3]_equal_26_o
+    SLICE_X47Y7.CLK      Tas                   0.322   neoPixel/pixelGenerator/blockCountRegister<192>
+                                                       neoPixel/pixelGenerator/blockCountRegister[255]_pixelBlockCount[0]_mux_28_OUT<191>1
+                                                       neoPixel/pixelGenerator/blockCountRegister_191
     -------------------------------------------------  ---------------------------
-    Total                                      7.670ns (1.540ns logic, 6.130ns route)
-                                                       (20.1% logic, 79.9% route)
+    Total                                      5.924ns (0.918ns logic, 5.006ns route)
+                                                       (15.5% logic, 84.5% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: NET "clk_50_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point neoPixel/pixelGenerator/pixelWriteCounter_0 (SLICE_X38Y7.SR), 1 path
+Paths for end point neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1 (RAMB8_X0Y4.ADDRAWRADDR10), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.339ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               neoPixel/pixelGenerator/state_FSM_FFd2 (FF)
-  Destination:          neoPixel/pixelGenerator/pixelWriteCounter_0 (FF)
+Slack (hold path):      0.261ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               neoPixel/pixelGenerator/pixelBlockRegister_0 (FF)
+  Destination:          neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1 (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.351ns (Levels of Logic = 0)
-  Clock Path Skew:      0.012ns (0.099 - 0.087)
+  Data Path Delay:      0.261ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
   Source Clock:         clk_50_BUFGP rising at 20.000ns
   Destination Clock:    clk_50_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: neoPixel/pixelGenerator/state_FSM_FFd2 to neoPixel/pixelGenerator/pixelWriteCounter_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X37Y7.BQ       Tcko                  0.198   neoPixel/pixelGenerator/state_FSM_FFd2
-                                                       neoPixel/pixelGenerator/state_FSM_FFd2
-    SLICE_X38Y7.SR       net (fanout=3)        0.135   neoPixel/pixelGenerator/state_FSM_FFd2
-    SLICE_X38Y7.CLK      Tcksr       (-Th)    -0.018   neoPixel/pixelGenerator/pixelWriteCounter<3>
-                                                       neoPixel/pixelGenerator/pixelWriteCounter_0
-    -------------------------------------------------  ---------------------------
-    Total                                      0.351ns (0.216ns logic, 0.135ns route)
-                                                       (61.5% logic, 38.5% route)
+  Minimum Data Path at Fast Process Corner: neoPixel/pixelGenerator/pixelBlockRegister_0 to neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    SLICE_X3Y9.AQ            Tcko                  0.198   neoPixel/pixelGenerator/pixelBlockRegister<3>
+                                                           neoPixel/pixelGenerator/pixelBlockRegister_0
+    RAMB8_X0Y4.ADDRAWRADDR10 net (fanout=2)        0.129   neoPixel/pixelGenerator/pixelBlockRegister<0>
+    RAMB8_X0Y4.CLKAWRCLK     Trckc_ADDRA (-Th)     0.066   neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1
+                                                           neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1
+    -----------------------------------------------------  ---------------------------
+    Total                                          0.261ns (0.132ns logic, 0.129ns route)
+                                                           (50.6% logic, 49.4% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point neoPixel/pixelGenerator/pixelWriteCounter_3 (SLICE_X38Y7.SR), 1 path
+Paths for end point neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1 (RAMB8_X0Y4.ADDRAWRADDR8), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.348ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               neoPixel/pixelGenerator/state_FSM_FFd2 (FF)
-  Destination:          neoPixel/pixelGenerator/pixelWriteCounter_3 (FF)
+Slack (hold path):      0.261ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               neoPixel/pixelGenerator/pixelBlockRegister_2 (FF)
+  Destination:          neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1 (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.360ns (Levels of Logic = 0)
-  Clock Path Skew:      0.012ns (0.099 - 0.087)
+  Data Path Delay:      0.261ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
   Source Clock:         clk_50_BUFGP rising at 20.000ns
   Destination Clock:    clk_50_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: neoPixel/pixelGenerator/state_FSM_FFd2 to neoPixel/pixelGenerator/pixelWriteCounter_3
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X37Y7.BQ       Tcko                  0.198   neoPixel/pixelGenerator/state_FSM_FFd2
-                                                       neoPixel/pixelGenerator/state_FSM_FFd2
-    SLICE_X38Y7.SR       net (fanout=3)        0.135   neoPixel/pixelGenerator/state_FSM_FFd2
-    SLICE_X38Y7.CLK      Tcksr       (-Th)    -0.027   neoPixel/pixelGenerator/pixelWriteCounter<3>
-                                                       neoPixel/pixelGenerator/pixelWriteCounter_3
-    -------------------------------------------------  ---------------------------
-    Total                                      0.360ns (0.225ns logic, 0.135ns route)
-                                                       (62.5% logic, 37.5% route)
+  Minimum Data Path at Fast Process Corner: neoPixel/pixelGenerator/pixelBlockRegister_2 to neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    SLICE_X3Y9.CQ           Tcko                  0.198   neoPixel/pixelGenerator/pixelBlockRegister<3>
+                                                          neoPixel/pixelGenerator/pixelBlockRegister_2
+    RAMB8_X0Y4.ADDRAWRADDR8 net (fanout=2)        0.129   neoPixel/pixelGenerator/pixelBlockRegister<2>
+    RAMB8_X0Y4.CLKAWRCLK    Trckc_ADDRA (-Th)     0.066   neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1
+                                                          neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1
+    ----------------------------------------------------  ---------------------------
+    Total                                         0.261ns (0.132ns logic, 0.129ns route)
+                                                          (50.6% logic, 49.4% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point neoPixel/pixelGenerator/pixelWriteCounter_2 (SLICE_X38Y7.SR), 1 path
+Paths for end point neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1 (RAMB8_X0Y4.ADDRAWRADDR9), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.349ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               neoPixel/pixelGenerator/state_FSM_FFd2 (FF)
-  Destination:          neoPixel/pixelGenerator/pixelWriteCounter_2 (FF)
+Slack (hold path):      0.261ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               neoPixel/pixelGenerator/pixelBlockRegister_1 (FF)
+  Destination:          neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1 (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.361ns (Levels of Logic = 0)
-  Clock Path Skew:      0.012ns (0.099 - 0.087)
+  Data Path Delay:      0.261ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
   Source Clock:         clk_50_BUFGP rising at 20.000ns
   Destination Clock:    clk_50_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: neoPixel/pixelGenerator/state_FSM_FFd2 to neoPixel/pixelGenerator/pixelWriteCounter_2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X37Y7.BQ       Tcko                  0.198   neoPixel/pixelGenerator/state_FSM_FFd2
-                                                       neoPixel/pixelGenerator/state_FSM_FFd2
-    SLICE_X38Y7.SR       net (fanout=3)        0.135   neoPixel/pixelGenerator/state_FSM_FFd2
-    SLICE_X38Y7.CLK      Tcksr       (-Th)    -0.028   neoPixel/pixelGenerator/pixelWriteCounter<3>
-                                                       neoPixel/pixelGenerator/pixelWriteCounter_2
-    -------------------------------------------------  ---------------------------
-    Total                                      0.361ns (0.226ns logic, 0.135ns route)
-                                                       (62.6% logic, 37.4% route)
+  Minimum Data Path at Fast Process Corner: neoPixel/pixelGenerator/pixelBlockRegister_1 to neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    SLICE_X3Y9.BQ           Tcko                  0.198   neoPixel/pixelGenerator/pixelBlockRegister<3>
+                                                          neoPixel/pixelGenerator/pixelBlockRegister_1
+    RAMB8_X0Y4.ADDRAWRADDR9 net (fanout=2)        0.129   neoPixel/pixelGenerator/pixelBlockRegister<1>
+    RAMB8_X0Y4.CLKAWRCLK    Trckc_ADDRA (-Th)     0.066   neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1
+                                                          neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1
+    ----------------------------------------------------  ---------------------------
+    Total                                         0.261ns (0.132ns logic, 0.129ns route)
+                                                          (50.6% logic, 49.4% route)
 
 --------------------------------------------------------------------------------
 
@@ -1490,7 +1137,7 @@ Slack: 16.876ns (period - min period limit)
   Min period limit: 3.124ns (320.102MHz) (Trper_CLKA(Fmax))
   Physical resource: neoPixel_neopixel_drive/Mram_data_in[8]_PWR_12_o_wide_mux_5_OUT/CLKAWRCLK
   Logical resource: neoPixel_neopixel_drive/Mram_data_in[8]_PWR_12_o_wide_mux_5_OUT/CLKAWRCLK
-  Location pin: RAMB8_X2Y4.CLKAWRCLK
+  Location pin: RAMB8_X0Y2.CLKAWRCLK
   Clock network: clk_50_BUFGP
 --------------------------------------------------------------------------------
 Slack: 16.876ns (period - min period limit)
@@ -1498,7 +1145,7 @@ Slack: 16.876ns (period - min period limit)
   Min period limit: 3.124ns (320.102MHz) (Trper_CLKA(Fmax))
   Physical resource: neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1/CLKAWRCLK
   Logical resource: neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1/CLKAWRCLK
-  Location pin: RAMB8_X2Y6.CLKAWRCLK
+  Location pin: RAMB8_X0Y4.CLKAWRCLK
   Clock network: clk_50_BUFGP
 --------------------------------------------------------------------------------
 Slack: 16.876ns (period - min period limit)
@@ -1506,7 +1153,7 @@ Slack: 16.876ns (period - min period limit)
   Min period limit: 3.124ns (320.102MHz) (Trper_CLKB(Fmax))
   Physical resource: neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1/CLKBRDCLK
   Logical resource: neoPixel_neopixel_drive/Mram_data_in[0]_PWR_12_o_wide_mux_4_OUT1/CLKBRDCLK
-  Location pin: RAMB8_X2Y6.CLKBRDCLK
+  Location pin: RAMB8_X0Y4.CLKBRDCLK
   Clock network: clk_50_BUFGP
 --------------------------------------------------------------------------------
 
@@ -1518,15 +1165,15 @@ Derived Constraints for hdmi_averager/Inst_dvid_in/dvid_clk
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|hdmi_averager/Inst_dvid_in/dvid|     12.000ns|      5.000ns|      9.520ns|            0|            0|            0|        98699|
+|hdmi_averager/Inst_dvid_in/dvid|     12.000ns|      5.000ns|     10.373ns|            0|            0|            0|       100991|
 |_clk                           |             |             |             |             |             |             |             |
 | hdmi_averager/Inst_dvid_in/clo|      1.200ns|      0.952ns|          N/A|            0|            0|            0|            0|
 | ck_x10_unbuffered             |             |             |             |             |             |             |             |
 |  hdmi_averager/Inst_dvid_in/io|      1.200ns|          N/A|          N/A|            0|            0|            0|            0|
 |  clock                        |             |             |             |             |             |             |             |
-| hdmi_averager/Inst_dvid_in/clo|      6.000ns|      4.582ns|          N/A|            0|            0|         1065|            0|
+| hdmi_averager/Inst_dvid_in/clo|      6.000ns|      4.541ns|          N/A|            0|            0|         1065|            0|
 | ck_x2_unbuffered              |             |             |             |             |             |             |             |
-| hdmi_averager/Inst_dvid_in/clo|     12.000ns|      9.147ns|          N/A|            0|            0|        97634|            0|
+| hdmi_averager/Inst_dvid_in/clo|     12.000ns|     10.373ns|          N/A|            0|            0|        99926|            0|
 | ck_x1_unbuffered              |             |             |             |             |             |             |             |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
@@ -1542,7 +1189,7 @@ Clock to Setup on destination clock clk_50
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_50         |    8.756|         |         |         |
+clk_50         |    9.590|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock hdmi_in_n<3>
@@ -1550,8 +1197,8 @@ Clock to Setup on destination clock hdmi_in_n<3>
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-hdmi_in_n<3>   |    9.147|         |         |         |
-hdmi_in_p<3>   |    9.147|         |         |         |
+hdmi_in_n<3>   |   10.373|         |         |         |
+hdmi_in_p<3>   |   10.373|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock hdmi_in_p<3>
@@ -1559,8 +1206,8 @@ Clock to Setup on destination clock hdmi_in_p<3>
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-hdmi_in_n<3>   |    9.147|         |         |         |
-hdmi_in_p<3>   |    9.147|         |         |         |
+hdmi_in_n<3>   |   10.373|         |         |         |
+hdmi_in_p<3>   |   10.373|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -1569,23 +1216,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 133328 paths, 0 nets, and 26577 connections
+Constraints cover 133679 paths, 0 nets, and 26282 connections
 
 Design statistics:
-   Minimum period:   9.147ns{1}   (Maximum frequency: 109.325MHz)
+   Minimum period:  10.373ns{1}   (Maximum frequency:  96.404MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Tue May 02 14:33:24 2017 
+Analysis completed Thu Mar 15 22:13:37 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 412 MB
+Peak Memory Usage: 537 MB
 
 
 

@@ -207,7 +207,6 @@ Elaborating entity <remove_bad_things> (architecture <Behavioral>) with generics
 Elaborating entity <remove_bad_things_byte> (architecture <Behavioral>) with generics from library <work>.
 
 Elaborating entity <averager> (architecture <Behavioral>) with generics from library <work>.
-WARNING:HDLCompiler:1127 - "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/averager.vhd" Line 69: Assignment to a_hsync ignored, since the identifier is never used
 
 Elaborating entity <uart_top> (architecture <rtl>) with generics from library <work>.
 WARNING:HDLCompiler:1127 - "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/uart_top.vhd" Line 113: Assignment to reset ignored, since the identifier is never used
@@ -222,6 +221,8 @@ Elaborating entity <uart_rx_controller> (architecture <Behavioral>) with generic
 INFO:HDLCompiler:679 - "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/uart_rx_controller.vhd" Line 118. Case statement is complete. others clause is never selected
 
 Elaborating entity <uart_tx_controller> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:634 - "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/dinolight.vhd" Line 133: Net <periodic_send_data_pixel[47]> does not have a driver.
+WARNING:Xst:2972 - "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/dinolight.vhd" line 140. All outputs of instance <corss_clock_screenAverage> of block <cross_clock_register> are unconnected in block <dinolight>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -230,7 +231,9 @@ Elaborating entity <uart_tx_controller> (architecture <Behavioral>) with generic
 Synthesizing Unit <dinolight>.
     Related source file is "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/dinolight.vhd".
         num_blocks = 32
-INFO:Xst:3210 - "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/dinolight.vhd" line 173: Output port <debug_leds> of the instance <uart> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/dinolight.vhd" line 140: Output port <signal_out> of the instance <corss_clock_screenAverage> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/dinolight.vhd" line 168: Output port <debug_leds> of the instance <uart> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <periodic_send_data_pixel> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Found 768-bit register for signal <neopixel_select>.
     Found 1-bit register for signal <run_neopixel>.
     Summary:
@@ -255,16 +258,6 @@ Synthesizing Unit <cross_clock_register_1>.
     Summary:
 	inferred 2304 D-type flip-flop(s).
 Unit <cross_clock_register_1> synthesized.
-
-Synthesizing Unit <cross_clock_register_2>.
-    Related source file is "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/cross_clock_register.vhd".
-        register_size = 48
-    Found 48-bit register for signal <register1>.
-    Found 48-bit register for signal <signal_out>.
-    Found 48-bit register for signal <register0>.
-    Summary:
-	inferred 144 D-type flip-flop(s).
-Unit <cross_clock_register_2> synthesized.
 
 Synthesizing Unit <neopixel_top>.
     Related source file is "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/neopixel_top.vhd".
@@ -353,13 +346,15 @@ Unit <NeoPixelDriver> synthesized.
 Synthesizing Unit <video_averager>.
     Related source file is "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/neppielight.vhd".
         num_blocks = 32
-INFO:Xst:3210 - "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/neppielight.vhd" line 103: Output port <leds> of the instance <Inst_dvid_in> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/neppielight.vhd" line 103: Output port <synced> of the instance <Inst_dvid_in> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/neppielight.vhd" line 103: Output port <pll_locked_o> of the instance <Inst_dvid_in> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/neppielight.vhd" line 100: Output port <leds> of the instance <Inst_dvid_in> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/neppielight.vhd" line 100: Output port <synced> of the instance <Inst_dvid_in> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/neppielight.vhd" line 100: Output port <pll_locked_o> of the instance <Inst_dvid_in> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/neppielight.vhd" line 125: Output port <leftAverage> of the instance <Inst_averager> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/neppielight.vhd" line 125: Output port <rightAverage> of the instance <Inst_averager> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <vsync>.
     Found 1-bit register for signal <last_vsync_value>.
-    Found 1-bit tristate buffer for signal <hdmi_in_sclk> created at line 100
-    Found 1-bit tristate buffer for signal <hdmi_in_sdat> created at line 101
+    Found 1-bit tristate buffer for signal <hdmi_in_sclk> created at line 97
+    Found 1-bit tristate buffer for signal <hdmi_in_sdat> created at line 98
     Summary:
 	inferred   2 D-type flip-flop(s).
 	inferred   2 Tristate(s).
@@ -855,7 +850,6 @@ Synthesizing Unit <uart_tx_controller>.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  85 D-type flip-flop(s).
-	inferred   1 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <uart_tx_controller> synthesized.
 
@@ -879,7 +873,7 @@ Macro Statistics
  7-bit adder                                           : 1
  8-bit adder                                           : 1
  9-bit adder                                           : 2
-# Registers                                            : 253
+# Registers                                            : 250
  1-bit register                                        : 65
  10-bit register                                       : 6
  11-bit register                                       : 2
@@ -891,7 +885,7 @@ Macro Statistics
  256-bit register                                      : 2
  3-bit register                                        : 3
  4-bit register                                        : 2
- 48-bit register                                       : 4
+ 48-bit register                                       : 1
  5-bit register                                        : 1
  6-bit register                                        : 1
  64-bit register                                       : 27
@@ -908,13 +902,12 @@ Macro Statistics
  7-bit comparator equal                                : 1
  8-bit comparator equal                                : 1
  9-bit comparator greater                              : 2
-# Multiplexers                                         : 3029
+# Multiplexers                                         : 3028
  1-bit 2-to-1 multiplexer                              : 2985
  1-bit 8-to-1 multiplexer                              : 1
  10-bit 2-to-1 multiplexer                             : 27
  24-bit 2-to-1 multiplexer                             : 1
  3-bit 2-to-1 multiplexer                              : 4
- 48-bit 2-to-1 multiplexer                             : 1
  9-bit 2-to-1 multiplexer                              : 10
 # Tristates                                            : 2
  1-bit tristate buffer                                 : 2
@@ -932,150 +925,6 @@ Macro Statistics
 
 WARNING:Xst:1290 - Hierarchical block <clean_hsync> is unconnected in block <hdmi_averager>.
    It will be removed from the design.
-WARNING:Xst:1710 - FF/Latch <register0_23> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_22> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_21> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_20> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_19> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_18> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_17> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_16> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_15> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_14> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_13> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_12> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_11> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_10> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_9> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_8> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_7> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_6> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_5> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_4> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_3> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_2> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_1> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_0> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_47> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_46> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_45> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_44> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_43> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_42> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_41> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_40> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_39> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_38> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_37> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_36> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_24> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_25> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_26> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_27> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_28> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_29> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_30> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_31> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_32> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_33> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_34> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <register0_35> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_12> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_13> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_14> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_15> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_16> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_17> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_18> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_19> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_20> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_21> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_22> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_23> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_11> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_10> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_9> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_8> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_7> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_6> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_5> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_4> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_3> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_2> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_1> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_0> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_47> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_46> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_45> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_44> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_43> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_42> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_41> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_40> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_39> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_38> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_37> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_36> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_24> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_25> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_26> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_27> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_28> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_29> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_30> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_31> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_32> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_33> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_34> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <register1_35> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_12> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_13> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_14> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_15> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_16> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_17> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_18> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_19> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_20> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_21> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_22> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_23> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_11> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_10> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_9> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_8> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_7> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_6> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_5> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_4> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_3> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_2> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_1> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_0> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_47> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_46> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_45> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_44> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_43> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_42> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_41> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_40> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_39> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_38> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_37> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_36> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_35> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_34> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_33> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_32> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_31> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_30> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_29> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_28> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_27> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_26> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_25> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <signal_out_24> (without init value) has a constant value of 0 in block <corss_clock_screenAverage>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <data_delayed_c_0> of sequential type is unconnected in block <i_tmds_decode>.
 WARNING:Xst:2677 - Node <sometimes_inverted_c_0> of sequential type is unconnected in block <i_tmds_decode>.
 WARNING:Xst:2677 - Node <c_0> of sequential type is unconnected in block <i_tmds_decode>.
@@ -1289,8 +1138,8 @@ Macro Statistics
  8-bit up counter                                      : 1
 # Accumulators                                         : 96
  22-bit up accumulator                                 : 96
-# Registers                                            : 8926
- Flip-Flops                                            : 8926
+# Registers                                            : 8782
+ Flip-Flops                                            : 8782
 # Comparators                                          : 45
  11-bit comparator greater                             : 18
  11-bit comparator lessequal                           : 16
@@ -1300,8 +1149,8 @@ Macro Statistics
  7-bit comparator equal                                : 1
  8-bit comparator equal                                : 1
  9-bit comparator greater                              : 2
-# Multiplexers                                         : 3150
- 1-bit 2-to-1 multiplexer                              : 3114
+# Multiplexers                                         : 3102
+ 1-bit 2-to-1 multiplexer                              : 3066
  1-bit 8-to-1 multiplexer                              : 1
  10-bit 2-to-1 multiplexer                             : 24
  3-bit 2-to-1 multiplexer                              : 4
@@ -1369,16 +1218,6 @@ Optimizing FSM <neoPixel/FSM_1> on signal <state[1:9]> with one-hot encoding.
  loadreg      | unreached
 ---------------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <uart/tx_controller/FSM_5> on signal <state[1:2]> with user encoding.
------------------------
- State     | Encoding
------------------------
- count_up  | 00
- send      | 01
- send_wait | 10
- send_next | 11
------------------------
-Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <uart/uart_serial_rx/FSM_2> on signal <r_SM_Main[1:3]> with user encoding.
 ----------------------------
  State          | Encoding
@@ -1413,6 +1252,16 @@ Optimizing FSM <uart/rx_controller/FSM_4> on signal <state[1:3]> with gray encod
  timeout      | unreached
  reset        | unreached
 --------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <uart/tx_controller/FSM_5> on signal <state[1:2]> with user encoding.
+-----------------------
+ State     | Encoding
+-----------------------
+ count_up  | 00
+ send      | 01
+ send_wait | 10
+ send_next | 11
+-----------------------
 INFO:Xst:1901 - Instance PLL_BASE_inst in unit PLL_BASE_inst of type PLL_BASE has been replaced by PLL_ADV
 INFO:Xst:2261 - The FF/Latch <framebuffer_253> in Unit <averager> is equivalent to the following FF/Latch, which will be removed : <framebuffer_229> 
 INFO:Xst:2261 - The FF/Latch <framebuffer_248> in Unit <averager> is equivalent to the following FF/Latch, which will be removed : <framebuffer_224> 
@@ -1516,8 +1365,6 @@ Optimizing unit <remove_bad_things_byte> ...
 
 Optimizing unit <cross_clock_register_1> ...
 
-Optimizing unit <cross_clock_register_2> ...
-
 Optimizing unit <dinolight> ...
 
 Optimizing unit <dvid_in> ...
@@ -1532,157 +1379,13 @@ Optimizing unit <averager> ...
 
 Optimizing unit <neopixel_top> ...
 
-Optimizing unit <uart_tx_controller> ...
-
 Optimizing unit <UART_RX> ...
 
 Optimizing unit <UART_TX> ...
 
 Optimizing unit <uart_rx_controller> ...
-WARNING:Xst:1710 - FF/Latch <corss_clock_screenAverage/register0_23> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_22> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_21> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_20> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_19> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_18> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_17> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_16> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_15> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_14> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_13> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_12> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_11> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_10> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_9> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_8> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_7> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_6> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_5> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_4> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_3> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_2> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_1> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_0> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_47> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_46> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_45> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_44> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_43> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_42> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_41> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_40> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_39> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_38> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_37> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_36> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_24> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_25> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_26> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_27> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_28> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_29> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_30> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_31> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_32> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_33> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_34> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register0_35> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_35> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_34> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_33> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_32> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_31> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_30> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_29> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_28> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_27> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_26> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_25> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_24> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_36> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_37> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_38> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_39> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_40> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_41> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_42> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_43> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_44> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_45> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_46> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_47> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_0> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_1> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_2> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_3> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_4> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_5> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_6> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_7> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_8> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_9> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_10> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_11> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_23> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_22> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_21> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_20> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_19> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_18> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_17> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_16> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_15> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_14> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_13> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/register1_12> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_12> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_13> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_14> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_15> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_16> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_17> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_18> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_19> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_20> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_21> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_22> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_23> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_11> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_10> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_9> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_8> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_7> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_6> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_5> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_4> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_3> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_2> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_1> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_0> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_47> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_46> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_45> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_44> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_43> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_42> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_41> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_40> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_39> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_38> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_37> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_36> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_35> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_34> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_33> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_32> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_31> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_30> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_29> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_28> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_27> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_26> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_25> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corss_clock_screenAverage/signal_out_24> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <uart_tx_controller> ...
 WARNING:Xst:2677 - Node <hdmi_averager/Inst_dvid_in/synced> of sequential type is unconnected in block <dinolight>.
 WARNING:Xst:2677 - Node <hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_c_0> of sequential type is unconnected in block <dinolight>.
 WARNING:Xst:2677 - Node <hdmi_averager/Inst_dvid_in/input_channel_c2/i_tmds_decode/data_delayed_c_1> of sequential type is unconnected in block <dinolight>.
@@ -1770,7 +1473,23 @@ WARNING:Xst:2677 - Node <hdmi_averager/clean_hsync/removeBuffer_62> of sequentia
 WARNING:Xst:2677 - Node <hdmi_averager/clean_hsync/removeBuffer_63> of sequential type is unconnected in block <dinolight>.
 WARNING:Xst:2677 - Node <uart/uart_serial_tx/o_TX_Active> of sequential type is unconnected in block <dinolight>.
 WARNING:Xst:2677 - Node <uart/rx_controller/mode_value_change> of sequential type is unconnected in block <dinolight>.
-WARNING:Xst:1710 - FF/Latch <uart/tx_controller/periodic_send_data_reg_31> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <uart/tx_controller/periodic_send_data_reg_40> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_41> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_42> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_43> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_44> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_45> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_46> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_47> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_32> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_33> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_34> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_35> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_36> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_37> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_38> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_39> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_31> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_30> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_29> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_28> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
@@ -1794,30 +1513,14 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_10> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_9> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_8> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_0> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_1> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_2> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_3> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_4> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_5> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_6> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_7> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_47> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_46> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_45> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_44> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_43> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_42> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_41> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_40> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_39> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_38> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_37> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_36> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_35> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_34> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_33> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_32> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_6> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_5> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_4> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_3> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_2> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_1> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/periodic_send_data_reg_0> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/data_to_uart_0> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/data_to_uart_1> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/data_to_uart_2> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
@@ -1826,14 +1529,14 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/data_to_uart_5> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/data_to_uart_6> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart/tx_controller/data_to_uart_7> (without init value) has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart/uart_serial_tx/r_TX_Data_7> has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart/uart_serial_tx/r_TX_Data_6> has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart/uart_serial_tx/r_TX_Data_5> has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart/uart_serial_tx/r_TX_Data_4> has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart/uart_serial_tx/r_TX_Data_3> has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart/uart_serial_tx/r_TX_Data_2> has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart/uart_serial_tx/r_TX_Data_1> has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart/uart_serial_tx/r_TX_Data_0> has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart/uart_serial_tx/r_TX_Data_1> has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart/uart_serial_tx/r_TX_Data_2> has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart/uart_serial_tx/r_TX_Data_3> has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart/uart_serial_tx/r_TX_Data_4> has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart/uart_serial_tx/r_TX_Data_5> has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart/uart_serial_tx/r_TX_Data_6> has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart/uart_serial_tx/r_TX_Data_7> has a constant value of 0 in block <dinolight>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <cross_clock_framebuffer/signal_out_601> in Unit <dinolight> is equivalent to the following FF/Latch, which will be removed : <cross_clock_framebuffer/signal_out_625> 
 INFO:Xst:2261 - The FF/Latch <cross_clock_framebuffer/register0_220> in Unit <dinolight> is equivalent to the following FF/Latch, which will be removed : <cross_clock_framebuffer/register0_244> 
 INFO:Xst:2261 - The FF/Latch <cross_clock_framebuffer/register0_216> in Unit <dinolight> is equivalent to the following FF/Latch, which will be removed : <cross_clock_framebuffer/register0_240> 
@@ -3143,14 +2846,14 @@ hdmi_averager/Inst_dvid_in/PLL_BASE_inst/CLKOUT2|    5.700|         |         | 
 
 
 Total REAL time to Xst completion: 19.00 secs
-Total CPU time to Xst completion: 18.77 secs
+Total CPU time to Xst completion: 18.44 secs
  
 --> 
 
 
-Total memory usage is 507864 kilobytes
+Total memory usage is 503940 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  461 (   0 filtered)
-Number of infos    :  425 (   0 filtered)
+Number of warnings :  175 (   0 filtered)
+Number of infos    :  428 (   0 filtered)
 

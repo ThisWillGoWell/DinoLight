@@ -5,10 +5,10 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="info" file="ConstraintSystem" num="0" >The Period constraint &lt;NET &quot;CLK_50&quot; PERIOD = 20 ns |&gt; [C:/Users/Willi/OneDrive/DinoLight/HDL/constraints/pinout.ucf(9)], is specified using the Net Period method which is not recommended. Please use the Timespec PERIOD method.
+<msg type="info" file="ConstraintSystem" num="0" >The Period constraint &lt;NET &quot;CLK_50&quot; PERIOD = 20 ns |&gt; [/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/constraints/pinout.ucf(9)], is specified using the Net Period method which is not recommended. Please use the Timespec PERIOD method.
 </msg>
 
-<msg type="info" file="ConstraintSystem" num="0" >The Period constraint &lt;PERIOD=12 ns;&gt; [C:/Users/Willi/OneDrive/DinoLight/HDL/constraints/pinout.ucf(30)], is specified using the Net Period method which is not recommended. Please use the Timespec PERIOD method.
+<msg type="info" file="ConstraintSystem" num="0" >The Period constraint &lt;PERIOD=12 ns;&gt; [/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/constraints/pinout.ucf(30)], is specified using the Net Period method which is not recommended. Please use the Timespec PERIOD method.
 </msg>
 
 </messages>

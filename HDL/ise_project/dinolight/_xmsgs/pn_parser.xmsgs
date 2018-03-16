@@ -8,7 +8,67 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/averager.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/blockToPixel.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/cross_clock_pulse.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/cross_clock_register.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/dinolight.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/dvid_in/dvid_gearbox.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/dvid_in/dvid_in.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/dvid_in/dvid_input_channel.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/dvid_in/serialiser_in.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/dvid_in/tmds_decode.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/neopixel_driver.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/neopixel_top.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/neopixel_top_wrapper.vhd&quot; into library work</arg>
+</msg>
+
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/neppielight.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/remove_bad_things.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/remove_bad_things_byte.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/uart_rx_controller.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/uart_rx_serial.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/uart_top.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/uart_tx_controller.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/uart_tx_serial.vhd&quot; into library work</arg>
 </msg>
 
 </messages>

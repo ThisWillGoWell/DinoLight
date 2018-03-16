@@ -11,10 +11,7 @@ entity video_averager is
            hdmi_in_sdat  : inout  STD_LOGIC;                    
 			  vsync 			: out std_logic;
 			  framebuffer	: out std_logic_vector(0 to num_blocks * 24 - 1);
-			  clk_pixel		: out std_logic;
-			  leftAverage : out std_logic_vector(0 to 23);
-			  rightAverage : out std_logic_vector(0 to 23)
-		
+			  clk_pixel		: out std_logic	
 			 );
 end video_Averager;
 
@@ -118,7 +115,7 @@ begin
 	-- will only swich if gets 64 of the same vaule
 	
 	clean_vsync	: remove_bad_things port map(clk_pixel_internal, dvid_vsync, vsync_cleaned);
-	clean_hsync	: remove_bad_things port map(clk_pixel_internal, dvid_hsync, hsync_cleaned);
+	clean_hsync	: remove_bad_things port map(	clk_pixel_internal, dvid_hsync, hsync_cleaned);
 	clean_blank	: remove_bad_things port map(clk_pixel_internal, dvid_blank, blank_cleaned);
 	
 	clean_red	: remove_bad_things_byte port map(clk_pixel_internal, dvid_red, red_cleaned);
@@ -133,9 +130,7 @@ begin
 		i_blank   => blank_cleaned,
 		i_hsync   => hsync_cleaned,
 		i_vsync   => vsync_cleaned,
-		framebuffer => framebuffer(0 to num_blocks * 24 -1),
-	   leftAverage => leftAverage,
-		rightAverage => rightAverage
+		framebuffer => framebuffer(0 to num_blocks * 24 -1)
 	);
 	
    -- convert the vsync clock into a single pulse

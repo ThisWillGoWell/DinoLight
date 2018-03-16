@@ -1,29 +1,31 @@
-Release 14.7 ngdbuild P.20131013 (nt64)
+Release 14.7 ngdbuild P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
--intstyle ise -dd _ngo -nt timestamp -uc
-C:/Users/Willi/OneDrive/DinoLight/HDL/constraints/pinout.ucf -p
-xc6slx25-ftg256-3 dinolight.ngc dinolight.ngd
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
+ise -dd _ngo -nt timestamp -uc
+/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/constr
+aints/pinout.ucf -p xc6slx25-ftg256-3 dinolight.ngc dinolight.ngd
 
 Reading NGO file
-"C:/Users/Willi/OneDrive/DinoLight/HDL/ise_project/dinolight/dinolight.ngc" ...
+"/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/ise_p
+roject/dinolight/dinolight.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
 Annotating constraints to design from ucf file
-"C:/Users/Willi/OneDrive/DinoLight/HDL/constraints/pinout.ucf" ...
+"/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/const
+raints/pinout.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
 INFO:ConstraintSystem - The Period constraint <NET "CLK_50" PERIOD = 20 ns |>
-   [C:/Users/Willi/OneDrive/DinoLight/HDL/constraints/pinout.ucf(9)], is
-   specified using the Net Period method which is not recommended. Please use
-   the Timespec PERIOD method.
+   [/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/co
+   nstraints/pinout.ucf(9)], is specified using the Net Period method which is
+   not recommended. Please use the Timespec PERIOD method.
 
 INFO:ConstraintSystem - The Period constraint <PERIOD=12 ns;>
-   [C:/Users/Willi/OneDrive/DinoLight/HDL/constraints/pinout.ucf(30)], is
-   specified using the Net Period method which is not recommended. Please use
-   the Timespec PERIOD method.
+   [/media/will/007CBA2A7CBA1A7C/Users/Willi/OneDrive/workspace/DinoLight/HDL/co
+   nstraints/pinout.ucf(30)], is specified using the Net Period method which is
+   not recommended. Please use the Timespec PERIOD method.
 
 Done...
 
@@ -40,10 +42,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 260148 kilobytes
+Total memory usage is 447260 kilobytes
 
 Writing NGD file "dinolight.ngd" ...
-Total REAL time to NGDBUILD completion:  8 sec
-Total CPU time to NGDBUILD completion:   8 sec
+Total REAL time to NGDBUILD completion:  4 sec
+Total CPU time to NGDBUILD completion:   4 sec
 
 Writing NGDBUILD log file "dinolight.bld"...
