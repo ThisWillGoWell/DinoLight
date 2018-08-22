@@ -1,4 +1,17 @@
 
+# Why
+One thing that I have awlays wanted to do was make lights go to music. However I found it was really
+hard to make something that was relly really really good, like basically somethiung beond a simple FFT mapped colors. 
+
+Then I found an open source porject that gave the required materials and code to process an HDMI signal and light up 
+LEDs on the back of the TV. AFter buying all the materials I realzied I might have underestimated the effort requried to
+implment the chagnes I would want to do to make it worth it. 
+
+Then when it came time to choose a capstore project this idea seemed to fit perfectly as it alighend with many 
+differnt erea of computer engineering.
+
+TLDR: I like colors
+
 # Description
 This project will use a Raspberry Pi and an FPGA to achieve the dynamic back lighting for a TV. The
 Raspberry Pi will be running a static web app and a web server. The app will talk to the
@@ -21,7 +34,7 @@ autonomously and will not need input from the user.
 
 # Basic Background Information
 To start I want to go over some basic background information on the
-project that most people might not be familiar with, FPGAs and how Video Signals work
+project that most people might not be familiar with Leds, FPGAs, and how Video Signals work
 
 ### FPGAs
 
@@ -32,7 +45,12 @@ of a GPP (general purpose process such as the CPU in a computer) and a
 ASIC (Application specific integrated circuit). They work by simulating
 hardware logic gates using Look up tables (LUT). For example a AND gate
 can be designed using a LUT like:
+
+
+
 Or the LUT can be a programed differently so a OR gate can be represented.
+
+
 
 FPGAs are "programmed" using HDL, Verilog or VHDL, that describes how
 the logic acts.
@@ -42,8 +60,9 @@ it is descriptive by how the FPGA should act.
 None of the HDL that is written is executed during the FPGA run time
 since there simply is no runtime. While these blocks are less power
 efficient, slower, and have a much larger physical footprint than their
-ASIC counterpart, their ability to be re-programmed, low entry cost, and
+ASIC counterpart, their ability to be re-programmed, low energy requirements, and
 easily modified make FPGAs viable solutions for a wide range of applications.
+
 One area they work well is when dealing with any sort of real time signal
 processing. For example, if you wanted to read a high bandwidth signal
 off a wire, a GPP (Arduino, ARM) would need to fire an interrupt to read
@@ -79,7 +98,7 @@ http://www.righto.com/2018/03/implementing-fizzbuzz-on-fpga.html
 Almost all video signals operate the same way. While the way they are
 transported differs widely depending on the medium
 (HDMI, DVI, Display Port, compressed/uncompressed) they all end up
-becoming the same right before they get displayed on the screen.
+becoming the same as they are wirtten to the screen.
 1.	Pixel Clock: High* when there is valid information on the other signals
 2.	Pixel value (24 bit): the three byte pixel value in RGB form
 3.	H-sync: High* when the current pixel is the last pixel on the row
@@ -192,17 +211,18 @@ Other singals were looked at (i2c, SPI) but because of the simpicaty of the
 interface a UART was all that was needed. The communication follows a command-expected
 payload striuctor. For each command sent, the FPGA is expecting a set
 number of bytes to follow.
-Command structor.
+
+
 
 |Description|Hex Value|Payload
 |-----------|:-------:|---------------------|
 |mode       |0x00     |mode select          |
 |counts     |0x01     |[]led per block      |
 |effect     |0x02     |[]custom block values|
-
+Command structor.
 
 ## Block to Pixel
-Inorder to make this project work on a wide range of screen sizes, there
+Inorder to make this project work on a wide range of screen sizes (one of my modificaiotns of the original project), there
 needs to be some way to map the color blocks to LEDs. Orginally, a mux
 was used to map each block to each LED. The Pi could then program the
 selscts of each mux to route the colors in diffrent locaitons. This niave
@@ -211,7 +231,7 @@ and would require num_leds mux's. While this worked for a small number
 of LEDs and bloks,
 when scaled up to a a large number of LEDs the number of required mux's
 quickly outsized the FPGA. This also required that there is one 24 bit
-register for each LED,
+register for each LED, which also quicked outscaled the number of registers there are.
 
 After a few other methods of trial and error, it was discoverted that it is
 unfeasable to store each output LED vaule on the FPGA.
@@ -223,7 +243,7 @@ how many times each color block needed to be written out
 
 For example, in the simple case, if there are 10 blocks located across the
 top of the screen, and 10 Leds acorss the top then
-each block will get written out once. If there are 5 blocks and 10 leds,
+each block will get written out once with a 1-1 mapping of blocks to leds. If there are 5 blocks and 10 leds,
 each block gets outputted twice, and 5 blocks and 9 LEDs, the output will
 look like: [2,2,1,2,2]. Below is the python code the server uses to calculate
 this distribution around the screen.
@@ -255,15 +275,17 @@ def write_pixel_mapping(self):
 ```
 
 ## Custom Colors
-The FPGA also support programming of custom colors for each block. This allows for
+The FPGA also support programming of custom colors for each block. when combined the controlling
+the number of times each block is written, some cool patterns can be creted. 
 
 # Current Setup
 This project is currently running in my living room attached to my projector.
-I built a custom screen using screen material and felt tape off amazon. The screen was
+I built a custom screen using and old bed frame, screen material, and felt tape off amazon. The screen was
 designed sit a few inches off the wall with a over hanging for the LED Strips. This allows the
 LEDs to project on to the wall behind the screen providing a nice diffusion effect.
 The source HDMI signal comes out of my Denon Receiver, acting as a HDMI switch,  goes into
 dinolight and then to the projector.
+
 
 # Next Iteration
 Add ability to control brightness
