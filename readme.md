@@ -1,4 +1,17 @@
 
+# Why
+One thing that I have awlays wanted to do was make lights go to music. However I found it was really
+hard to make something that was relly really really good, like basically somethiung beond a simple FFT mapped colors. 
+
+Then I found an open source porject that gave the required materials and code to process an HDMI signal and light up 
+LEDs on the back of the TV. AFter buying all the materials I realzied I might have underestimated the effort requried to
+implment the chagnes I would want to do to make it worth it. 
+
+Then when it came time to choose a capstore project this idea seemed to fit perfectly as it alighend with many 
+differnt erea of computer engineering.
+
+TLDR: I like colors
+
 # Description
 
 This project will use a Raspberry Pi and an FPGA to achieve the dynamic back lighting for a TV. The
@@ -370,23 +383,3 @@ Add ability to control brightness
 check if each average if above a threshold to have black areas be dark vs dim
 replace all the adders with a signal adder, remove the block registers and use the memory to
 keep track of the current averages and each LED color. This will remove a lot of the redundant logic
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
