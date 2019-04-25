@@ -1,16 +1,13 @@
 
 # Why
-One thing that I have awlays wanted to do was make lights go to music. However I found it was really
-hard to make something that was relly really really good, like basically somethiung beond a simple FFT mapped colors. 
+I have always wanted was to make lights dance to music. However, I found it was difficult to make something impressive - anything beyond a simple FFT mapped colors. 
 
-Then I found an open source porject that gave the required materials and code to process an HDMI signal and light up 
-LEDs on the back of the TV. AFter buying all the materials I realzied I might have underestimated the effort requried to
-implment the chagnes I would want to do to make it worth it. 
+It all started when I found an open source project that provided the required materials and code to process an HDMI signal and light up LEDs on the back of the TV. After buying all the materials, I realized that I might have underestimated the effort required to make it worth it. 
 
-Then when it came time to choose a capstore project this idea seemed to fit perfectly as it alighend with many 
-differnt erea of computer engineering.
+When it came time for me to choose a capstone project this idea seemed to fit perfectly as it aligned with many 
+different areas of computer engineering.
 
-TLDR: I like colors
+TLDR: I like colors.
 
 # Description
 
@@ -44,12 +41,12 @@ project that most people might not be familiar with: FPGAs and how Video Signals
 
 ### FPGAs
 
-FPGAs are one of the coolest piece of technology (conceptually at least)
-I have ever worked with. The base idea is you can build programmable
+FPGAs are one of the coolest pieces of technology (conceptually at least)
+I have ever worked with. The basic idea is that you can build programmable
 hardware that is really good at one task. They lie somewhere in the middle
 of a GPP (general purpose process such as the CPU in a computer) and a
 ASIC (Application specific integrated circuit). They work by building
-hardware logic gates using Look up tables (LUT). For example a two input AND gate
+hardware logic gates using Look Up Tables (LUT). For example, a two input AND gate
 can be designed using a LUT like:
 
 ```text
@@ -62,7 +59,7 @@ T|0| ->  | X  |
           A  B
 ```
 
-Or the LUT can be a programed differently so a OR gate can be represented.
+Or the LUT can be a programed differently so an OR gate can be represented.
 
 ```text
           ____
@@ -77,31 +74,31 @@ T|1| ->  | X  |
 FPGAs are "programmed" using HDL, Verilog or VHDL, that describes how
 the logic acts.
 The compiler then takes the HDL and converts it to a bit file that is used
-to configure the hardware present on the FPGA. This involves programming all the luts on the board. HDL is similar to HTML in that it is descriptive, it describes by how the FPGA should act.
+to configure the hardware present on the FPGA. This involves programming all the LUTs on the board. HDL is similar to HTML in that it is descriptive: it describes how the FPGA should act.
 None of the HDL that is written is executed during the FPGA run time, mostly because
-since there simply is no runtime.
+there simply is no runtime.
 
-FPGAs are more expensive, "slower" (I physically could not have the fpga work at a speed required for 4k),  have a much larger physical footprint, and limited general compute power than their
-ASIC counterpart. However their ability to be re-programmed, low entry cost, and
-ease of change make FPGAs viable solutions for a wide range of applications.
-One area they work well is when dealing with any sort of real time signal
+FPGAs are more expensive, "slower" (I physically could not have the fpga work at a speed required for 4k), have a much larger physical footprint, and have a more limited general compute power than their
+ASIC counterparts. However, their ability to be re-programmed, their low entry cost, and
+the ease of making changes to logic make FPGAs a viable solution for a wide range of applications.
+One area they excel is when dealing with any sort of real time signal
 processing. If you wanted to read a high bandwidth signal
-off a wire, a general purpose processor, or GPP, (Arduino, ARM) would need to fire an interrupt, read
+off a wire, a general purpose processor, or GPP (Arduino, ARM), you would need to fire an interrupt, read
 the signal, add that signal to a buffer, then find time between interrupts
 to process the signal. The higher bandwidth the signal is, the faster the
 processor needs to be. However, assuming the signal is within the required frequency, a FPGA can work on all those steps in parallel.
 One set of LUTS can be focused on reading the signals, one set can be
 reading/writing to shared memory, while another is doing any sort of processing.
-A GPP could then read the processed memory for basically free.
+A GPP could then read the processed memory basically for free.
 
-As someone who as taught FGPA design, the hardest conceptual leap is the
-to understand is the parallel nature of what you are building.
-When looking at traditional code, each instruction is sequential since a
-processor can only do one instruction at a time.
-So if you then carry that mindset over to FPGAs, you're going to have a
-bad time; sine on a FPGA,  multiple things can happen at once.
+As someone who has taught FGPA design, the hardest conceptual leap is
+understanding the parallel nature of what you are building.
+When looking at traditional code, each instruction is sequential, as a
+processor can only perform one instruction at a time.
+If you carry that mindset over to FPGAs, you're going to have a
+bad time. On an FPGA, multiple things can happen simultaneously.
 
-For Example the flowing vhdl code with signals A, B, C:
+For example, the flowing VHDL code with signals A, B, C:
 ```vhdl
 if rising_edge(clk) then
   A <= B;
@@ -109,20 +106,20 @@ if rising_edge(clk) then
 end if;
 ```
 
-Most people would assume that on each clock cycle, first A get set to B,
+Most people would assume that on each clock cycle, first A gets set to B,
 then C get set to A, thus C = B.
-However this is incorrect since both A and C get updated at the same time,
-thus after each clock cycle  A = B and C = A' (whatever A was BEFORE the clock ).
+However, this is incorrect. Both A and C get updated at the same time,
+thus, after each clock cycle:  A = B and C = A' (whatever A was BEFORE the clock ).
 
-Here is a good post I found to give some more background on a FPGA
+Here is a good post I found to give some more background on a FPGA:
 http://www.righto.com/2018/03/implementing-fizzbuzz-on-fpga.html
 
 ### Video Signals
 
 Almost all video signals operate the same way. While the way they are
-transported differs widely depending on the medium
+transported differs widely depending on the medium,
 (HDMI, DVI, Display Port, compressed/uncompressed) they all end up
-becoming the same right before they get displayed on the screen, usually seen in
+becoming the same right before they get displayed on the screen. This is usually seen in
 a 40-pin ribbon cable.
 
 - Pixel Clock: High* when there is valid information on the other signals
@@ -141,33 +138,36 @@ A screen with resolution of 1920x1080 will have a h-sync high* every
 
 ## Design
 
-The system will be split into two main parts, a web server running on a Raspberry Pi and an
-FPGA doing video-image processing. Required external ports of the system are as follows:
-an HDMI input to get the video stream to the system, a serial interface to control the LEDs, and
-an internet connection to access the web server.
-The HDMI signal will go through pre-processing hardware to downscale to a 720p signal. The
-pre-processing hardware first involves an HDMI duplicator so the monitor can have access to
-the original video stream so the system does not have to recreate it. Then, the signal is fed into
-the HDMI downscaler which will convert whatever HD resolution it is into a 720p signal to be fed
-into the FPGA via an HDMI port. The FPGA and Raspberry Pi will use UART communication to
-communicate with each other
+The system will be split into two main parts: 
+1. A web server running on a Raspberry Pi
+2. An FPGA doing video-image processing. 
 
+Required external ports of the system are as follows:
+1. An HDMI input to get the video stream to the system
+2. A serial interface to control the LEDs
+3. An internet connection to access the web server
+
+The pre-processing hardware first involves an HDMI duplicator so the monitor can have access to the original video stream so the system does not have to recreate it. Then, the second HDMI signal is fed into an HDMI downscaler, which will convert whatever the HD resolution is into a 720p signal to be fed into the FPGA via an HDMI port. The FPGA and Raspberry Pi will use UART communication to communicate with each other.
+ 
+                    HDMI -> Monitor
+                   /
+HDMI -> Duplicator                                                                       
+                   \        
+                    HDMI -> Downscaler (converts to 720p signal) -> FPGA HDMI port <-UART-> RPi
 ## Raspberry Pi
 
-The raspberry is there to program the FPGA and host a flask app for the frontend user interface.
+The RPi is there to program the FPGA and host a flask app for the frontend user interface.
 
 ### Flask Backend
 
-Flask takes care of configuring the HTTP server endpoints, allowing for quick and easy development of the REST API by mapping URIs to
-Python functions. The Flask app will use Python’s serial library to read and write to the external
+Flask takes care of configuring the HTTP server endpoints, allowing for quick and easy development of the REST API by mapping URIs to Python functions. The Flask app will use Python’s serial library to read and write to the external
 UART communication pins on the Pi. Flask will also serve up any static content.
 
 ### Front end
 
-The frontend is a angular JS app with a flask backend that allows for the control and configuration of the project.
+The frontend is an angular JS app with a Flask backend that allows for the control and configuration of the project.
 
-Messages from the frontend to system are JSON based. They contain at minimum an ‘op’ command
-and any parameters needed by the system.
+Messages from the frontend to system are JSON based. They contain at minimum an ‘op’ command and any parameters needed by the system.
 
 ```json
 {"op":"set", "what":"mode", "to":"on"}
@@ -185,7 +185,7 @@ and any parameters needed by the system.
 {"op":"set", "what":"vert_leds", "to": 50}
 ```
 
-- set how many vertical LEDs are on the TV.
+- set how many vertical LEDs are on the TV
 
 ```json
 {"op":"get", "what":"mode"}
@@ -198,12 +198,11 @@ and any parameters needed by the system.
 The FPGA will be the core of the image processing portion of the project. Within the
 FPGA, configuration registers will be used to configure FPGA as well as to house the mapping
 between the pixel accumulators and the backlighting LEDs.
-The color averaging
-algorithm will be preformed by the FPGA.
+The color averaging algorithm will be preformed by the FPGA.
 Then, using the pixel mapping configuration registers, the FPGA will write the output of RGB
 values to the individually addressable LEDs used as the backlighting LEDs. This output will be
 performed using a serial interface coded specifically for the LED strips. The FPGA selected was the Xilinx Spartan
-6XL25 on the Mini-Spartan 6+ for built in HDMI inputs and larger lut count.
+6XL25 on the Mini-Spartan 6+ for built in HDMI inputs and larger LUT count.
 
 ### Color Averaging Algorithm
 
@@ -224,25 +223,17 @@ if rising_edge(pixel_clock):
          block_b += current_b
 ```
 
-What’s important to remember is that for each color block, hardware that
-preforms this action is generated so each color block can function in
-parallel. No matter where on the screen on each pixel clock, the if
-statement that checks the current_x and current_y will execute num_blocks
-time, all at the same time. The start position of each block can be
-calculated using a python script and then fed into a VHDL generate
-statement to position
+What’s important to remember is that for each color block, hardware that performs this action is generated so that each color block can function in parallel. No matter where it is on the screen on each pixel clock, the if statement that checks the current_x and current_y will execute num_blocks all at the same time. The start position of each block can be calculated using a python script and then fed into a VHDL generate statement to position.
 
-One interesting side note is with this method the average color of any
-\area on the screen can be found by just changing the start locations and size of the block.
+One interesting side note is that with this method the average color of any area on the screen can be found by just changing the start locations and size of the block.
 
-For this project the block size used was a power of two, allowing for
-division to be accomplished by a shift.
+For this project the block size used was a power of two, allowing for division to be accomplished by a shift.
 
 ### FPGA-Raspberry Pi Communicaion
 
-The FPGA will receive command over uart using a command-payload structure. UART was
-selected because of its ease of implementation and supporting the required speeds. An
-open-source UART controller provides the Rx and Tx interfaces. A state machine
+The FPGA will receive commands over UART using a command-payload structure. UART was
+selected due to its ease of implementation and supporting the required speeds. An
+open-source UART controller will provide the Rx and Tx interfaces. A state machine
 will then be used to decode the commands and payloads to their appropriate registers.
 Other signals were looked at (i2c, SPI) but because of the simplicity of the
 interface a UART was all that was needed. The communication follows a command-expected
@@ -311,9 +302,8 @@ def write_pixel_mapping(self):
 
 ## Custom Colors
 
-The FPGA also support programming of custom colors for each block. This allows for the leds to be used like a standard LED light strip. 
-Time did not allow for me to implement this on the raspberry pi but was
-really fun to play around with.
+The FPGA also supports programming of custom colors for each block. This allows for the leds to be used like a standard LED light strip. 
+Time did not allow for me to implement this on the raspberry pi but was really fun to play around with.
 
 ## RTL Schematics
 
@@ -324,9 +314,9 @@ but for the most part just becomes noise once you zoom into the lowest level.
 
 ### Top Level
 
-At the top level the inputs and outputs of the fpgs are displayed
+At the top level the inputs and outputs of the FPGAs are displayed
 ![top](images/level_0.png)
-The wires C10, C6, C8 are all tied to a pin on the fpga board and map to the rx, tx, and neopxiel control respectability.
+The wires C10, C6, C8 are all tied to a pin on the FPGAs board and map to the Rx, Tx, and neopixel control respectability.
 
 ### Level 1
 
@@ -372,7 +362,7 @@ LEDs to project on to the wall behind the screen providing a nice diffusion effe
 The source HDMI signal comes out of my Denon Receiver, acting as a HDMI switch,  goes into
 dinolight and then to the projector.
 
-![streambale]()
+![streamable]()
 ![demo](images/demo.gif)
 
 ![image](images/projector-back-whole.jpg)
